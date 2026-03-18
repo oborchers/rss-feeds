@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Mar 2026 12:13:48 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 13:30:57 +0000</lastBuildDate>
     <item>
       <title>DataOps with Dagster: A Practical Guide to Building a Reliable Data Platform</title>
       <link>https://dagster.io/blog/dataops-with-dagster-a-practical-guide-to-building-a-reliable-data-platform</link>
