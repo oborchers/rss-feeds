@@ -13,7 +13,7 @@
       <link>https://anthropic.com/research/feed_anthropic_research.xml</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Mar 2026 11:16:21 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 14:25:34 +0000</lastBuildDate>
     <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
@@ -75,6 +75,22 @@
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Mar 6, 2026Frontier Red TeamPartnering with Mozilla to improve Firefox’s security</title>
+      <link>https://www.anthropic.com/research/firefox</link>
+      <description>Mar 6, 2026Frontier Red TeamPartnering with Mozilla to improve Firefox’s security</description>
+      <guid isPermaLink="false">https://www.anthropic.com/research/firefox</guid>
+      <category>Research</category>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit</title>
+      <link>https://www.anthropic.com/research/exploit</link>
+      <description>Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit</description>
+      <guid isPermaLink="false">https://www.anthropic.com/research/exploit</guid>
+      <category>Research</category>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</title>
       <link>https://www.anthropic.com/research/labor-market-impacts</link>
       <description>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</description>
@@ -105,22 +121,6 @@
       <guid isPermaLink="false">https://www.anthropic.com/research/persona-selection-model</guid>
       <category>Research</category>
       <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice</title>
-      <link>https://www.anthropic.com/research/measuring-agent-autonomy</link>
-      <description>Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/measuring-agent-autonomy</guid>
-      <category>Research</category>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index</title>
-      <link>https://www.anthropic.com/research/india-brief-economic-index</link>
-      <description>Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/india-brief-economic-index</guid>
-      <category>Research</category>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>PolicyDec 18, 2025Project Vend: Phase twoIn June, we revealed that we’d set up a small shop in our San Francisco office lunchroom, run by an AI shopkeeper. It was part of Project Vend, a free-form experiment exploring how well AIs could do on complex, real-world tasks. How has Claude's business been since we last wrote?</title>
