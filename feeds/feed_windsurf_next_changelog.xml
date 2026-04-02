@@ -8,7 +8,15 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Apr 2026 21:11:06 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 22:10:11 +0000</lastBuildDate>
+    <item>
+      <title>Windsurf Next 1.9600.1032</title>
+      <link>https://windsurf.com/changelog/windsurf-next#1.9600.1032</link>
+      <description>&lt;h3&gt;Token Tracking in Response Card&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Added token usage tracking to the response card. You can now see a breakdown of input tokens, output tokens, and cached input tokens for each response directly in the chat panel.&lt;/li&gt;&lt;li&gt;Enhanced the context window indicator to show when the prompt cache expires, giving you better visibility into cache utilization.&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Bug Fixes and Improvements&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Fixed keyboard input issues with the built-in terminal on Windows&lt;/li&gt;&lt;li&gt;Improved cost sorting for token-based plans in the model picker&lt;/li&gt;&lt;li&gt;Clarified which models are available only on pro plans&lt;/li&gt;&lt;li&gt;Repaired devcontainer support on RHEL 8&lt;/li&gt;&lt;/ul&gt;</description>
+      <guid isPermaLink="false">https://windsurf.com/changelog/windsurf-next#1.9600.1032#1.9600.1032</guid>
+      <category>Changelog</category>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Windsurf Next 1.9600.1002</title>
       <link>https://windsurf.com/changelog/windsurf-next#1.9600.1002</link>
