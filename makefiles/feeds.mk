@@ -170,6 +170,20 @@ feeds_the_batch: ## Generate RSS feed for The Batch by DeepLearning.AI
 	$(Q)python feed_generators/deeplearningai_the_batch.py
 	$(call print_success,The Batch feed generated)
 
+.PHONY: feeds_perplexity_hub
+feeds_perplexity_hub: ## Generate RSS feed for Perplexity Blog (incremental)
+	$(call check_venv)
+	$(call print_info,Generating Perplexity Blog feed)
+	$(Q)python feed_generators/perplexity_hub.py
+	$(call print_success,Perplexity Blog feed generated)
+
+.PHONY: feeds_perplexity_hub_full
+feeds_perplexity_hub_full: ## Generate RSS feed for Perplexity Blog (full reset)
+	$(call check_venv)
+	$(call print_info,Generating Perplexity Blog feed - FULL RESET)
+	$(Q)python feed_generators/perplexity_hub.py --full
+	$(call print_success,Perplexity Blog feed generated - full reset)
+
 .PHONY: feeds_dagster
 feeds_dagster: ## Generate RSS feed for Dagster Blog
 	$(call check_venv)
