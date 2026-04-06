@@ -177,6 +177,20 @@ feeds_groq: ## Generate RSS feed for Groq Blog
 	$(Q)python feed_generators/groq_blog.py
 	$(call print_success,Groq Blog feed generated)
 
+.PHONY: feeds_mistral
+feeds_mistral: ## Generate RSS feed for Mistral AI News (incremental)
+	$(call check_venv)
+	$(call print_info,Generating Mistral AI News feed)
+	$(Q)python feed_generators/mistral_blog.py
+	$(call print_success,Mistral AI News feed generated)
+
+.PHONY: feeds_mistral_full
+feeds_mistral_full: ## Generate RSS feed for Mistral AI News (full reset)
+	$(call check_venv)
+	$(call print_info,Generating Mistral AI News feed - FULL RESET)
+	$(Q)python feed_generators/mistral_blog.py --full
+	$(call print_success,Mistral AI News feed generated - full reset)
+
 .PHONY: feeds_meta_ai
 feeds_meta_ai: ## Generate RSS feed for Meta AI Blog (incremental)
 	$(call check_venv)
