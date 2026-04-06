@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-21T01:06:33.311301+00:00",
+  "last_updated": "2026-04-06T15:14:16.667105+00:00",
   "posts": [
     {
       "url": "https://cursor.com/blog/prompt-design",
@@ -287,6 +287,125 @@
       "description": "How we used a custom AI-driven metric to systematically improve Bugbot.",
       "date": "2026-01-15T12:00:00.000Z",
       "category": "research"
+    },
+    {
+      "url": "https://cursor.com/blog/salesforce",
+      "title": "Salesforce accelerates velocity by over 30% and ships higher-quality code with Cursor",
+      "description": "",
+      "date": "2026-01-21T12:00:00.000Z",
+      "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/nvidia",
+      "title": "NVIDIA commits 3x more code across 30,000 developers with Cursor",
+      "description": "",
+      "date": "2026-02-06T12:00:00.000Z",
+      "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/box",
+      "title": "Box chooses Cursor for enterprise-grade quality, security, and control",
+      "description": "",
+      "date": "2026-02-13T12:00:00.000Z",
+      "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/third-era",
+      "title": "The third era of AI software development",
+      "description": "A third era of AI software development is emerging as autonomous cloud agents take on larger tasks over longer timescales.",
+      "date": "2026-02-26T19:35:24.000Z",
+      "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/planetscale",
+      "title": "PlanetScale protects production reliability with Bugbot",
+      "description": "",
+      "date": "2026-03-02T12:00:00.000Z",
+      "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/jetbrains-acp",
+      "title": "Cursor is now available in JetBrains IDEs",
+      "description": "",
+      "date": "2026-03-04T12:00:00.000Z",
+      "category": "product"
+    },
+    {
+      "url": "https://cursor.com/blog/automations",
+      "title": "Build agents that run automatically",
+      "description": "",
+      "date": "2026-03-05T12:00:00.000Z",
+      "category": "product"
+    },
+    {
+      "url": "https://cursor.com/blog/new-plugins",
+      "title": "Over 30 new plugins join the Cursor Marketplace",
+      "description": "",
+      "date": "2026-03-11T00:00:00.000Z",
+      "category": "product"
+    },
+    {
+      "url": "https://cursor.com/blog/cursorbench",
+      "title": "How we compare model quality in Cursor",
+      "description": "We use a hybrid online-offline eval process to keep our understanding of model quality aligned with what developers actually do.",
+      "date": "2026-03-11T12:00:00.000Z",
+      "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/security-agents",
+      "title": "Securing our codebase with autonomous agents",
+      "description": "",
+      "date": "2026-03-16T00:00:00.000Z",
+      "category": "product"
+    },
+    {
+      "url": "https://cursor.com/blog/self-summarization",
+      "title": "Training Composer for longer horizons",
+      "description": "",
+      "date": "2026-03-17T12:00:00.000Z",
+      "category": "research"
+    },
+    {
+      "url": "https://cursor.com/blog/composer-2",
+      "title": "Introducing Composer 2",
+      "description": "Frontier-level coding with strong CursorBench results, higher token efficiency, and a faster default variant.",
+      "date": "2026-03-19T00:00:00.000Z",
+      "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/fast-regex-search",
+      "title": "Fast regex search: indexing text for agent tools",
+      "description": "",
+      "date": "2026-03-23T12:00:00.000Z",
+      "category": "research"
+    },
+    {
+      "url": "https://cursor.com/blog/self-hosted-cloud-agents",
+      "title": "Run cloud agents in your own infrastructure",
+      "description": "",
+      "date": "2026-03-25T12:00:00.000Z",
+      "category": "product"
+    },
+    {
+      "url": "https://cursor.com/blog/real-time-rl-for-composer",
+      "title": "Improving Composer through real-time RL",
+      "description": "",
+      "date": "2026-03-26T00:00:00.000Z",
+      "category": "research"
+    },
+    {
+      "url": "https://cursor.com/blog/composer-2-technical-report",
+      "title": "A technical report on Composer 2",
+      "description": "",
+      "date": "2026-03-27T12:00:00.000Z",
+      "category": "research"
+    },
+    {
+      "url": "https://cursor.com/blog/cursor-3",
+      "title": "Meet the new Cursor",
+      "description": "Cursor 3 is a unified workspace for building software with agents.",
+      "date": "2026-04-02T00:00:00.000Z",
+      "category": ""
     }
   ]
 }

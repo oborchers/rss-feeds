@@ -97,7 +97,7 @@ For blogs with "Load More" or pagination that uses URL query params (`?page=2`).
 
 For JS-heavy sites where content loads dynamically via JavaScript button clicks.
 
-**Examples**: `anthropic_news_blog.py` (reference implementation), `anthropic_research_blog.py`, `openai_research_blog.py`
+**Examples**: `anthropic_news_blog.py` (reference implementation), `anthropic_research_blog.py`
 
 **Key functions**:
 - `setup_selenium_driver()` - Headless Chrome with `undetected-chromedriver`
@@ -277,6 +277,6 @@ Selenium generators are detected automatically by `run_all_feeds.py` checking fo
 - requests-based: automatically included in hourly runs
 - Selenium-based (imports `undetected_chromedriver`): automatically included in daily runs
 
-**Current Selenium generators (daily):** `anthropic_news_blog.py`, `anthropic_research_blog.py`, `meta_ai_blog.py`, `openai_research_blog.py`, `perplexity_hub.py`, `xainews_blog.py`
+**Current Selenium generators (daily):** `anthropic_news_blog.py`, `anthropic_research_blog.py`, `meta_ai_blog.py`, `perplexity_hub.py`, `xainews_blog.py`
 
 - **`validate_feeds.yml`** runs after each feed workflow completes. Checks all XML feeds for empty files (error, exit 1) and stale content older than 60 days (warning, logged but exit 0). Also triggered manually via workflow_dispatch.
