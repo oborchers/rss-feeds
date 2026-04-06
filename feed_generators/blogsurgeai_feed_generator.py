@@ -29,7 +29,7 @@ def generate_blogsurgeai_feed():
     fg.author({"name": "Surge AI", "email": "team@surgehq.ai"})
     fg.link(href="https://www.surgehq.ai/blog", rel="alternate")
     fg.link(
-        href="https://raw.githubusercontent.com/olshansky/rss-feeds/main/feeds/feed_blogsurgeai.xml",
+        href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_blogsurgeai.xml",
         rel="self",
     )
     fg.language("en")

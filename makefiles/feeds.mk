@@ -44,19 +44,6 @@ feeds_anthropic_changelog_claude_code: ## Generate RSS feed for Anthropic Claude
 	$(Q)python feed_generators/anthropic_changelog_claude_code.py
 	$(call print_success,Claude Code changelog feed generated)
 
-.PHONY: feeds_anthropic_red
-feeds_anthropic_red: ## Generate RSS feed for Anthropic Frontier Red Team
-	$(call check_venv)
-	$(call print_info,Generating Anthropic Red Team feed)
-	$(Q)python feed_generators/anthropic_red_blog.py
-	$(call print_success,Anthropic Red Team feed generated)
-
-.PHONY: feeds_google_ai
-feeds_google_ai: ## Generate RSS feed for Google AI Blog
-	$(call check_venv)
-	$(call print_info,Generating Google AI feed)
-	$(Q)python feed_generators/google_ai_blog.py
-	$(call print_success,Google AI feed generated)
 
 .PHONY: feeds_ollama
 feeds_ollama: ## Generate RSS feed for Ollama Blog
@@ -64,13 +51,6 @@ feeds_ollama: ## Generate RSS feed for Ollama Blog
 	$(call print_info,Generating Ollama Blog feed)
 	$(Q)python feed_generators/ollama_blog.py
 	$(call print_success,Ollama Blog feed generated)
-
-.PHONY: feeds_paulgraham
-feeds_paulgraham: ## Generate RSS feed for Paul Graham's articles
-	$(call check_venv)
-	$(call print_info,Generating Paul Graham feed)
-	$(Q)python feed_generators/paulgraham_blog.py
-	$(call print_success,Paul Graham feed generated)
 
 .PHONY: feeds_blogsurgeai
 feeds_blogsurgeai: ## Generate RSS feed for Surge AI Blog
@@ -107,13 +87,6 @@ feeds_cohere_full: ## Generate RSS feed for Cohere Blog (full reset)
 	$(Q)python feed_generators/cohere_blog.py --full
 	$(call print_success,Cohere Blog feed generated - full reset)
 
-.PHONY: feeds_chanderramesh
-feeds_chanderramesh: ## Generate RSS feed for Chander Ramesh's writing
-	$(call check_venv)
-	$(call print_info,Generating Chander Ramesh feed)
-	$(Q)python feed_generators/chanderramesh_blog.py
-	$(call print_success,Chander Ramesh feed generated)
-
 .PHONY: feeds_claude
 feeds_claude: ## Generate RSS feed for Claude Blog (incremental)
 	$(call check_venv)
@@ -127,20 +100,6 @@ feeds_claude_full: ## Generate RSS feed for Claude Blog (full reset)
 	$(call print_info,Generating Claude Blog feed - FULL RESET)
 	$(Q)python feed_generators/claude_blog.py --full
 	$(call print_success,Claude Blog feed generated - full reset)
-
-.PHONY: feeds_thinkingmachines
-feeds_thinkingmachines: ## Generate RSS feed for Thinking Machines Lab blog
-	$(call check_venv)
-	$(call print_info,Generating Thinking Machines Lab feed)
-	$(Q)python feed_generators/thinkingmachines_blog.py
-	$(call print_success,Thinking Machines Lab feed generated)
-
-.PHONY: feeds_hamel
-feeds_hamel: ## Generate RSS feed for Hamel Husain's Blog
-	$(call check_venv)
-	$(call print_info,Generating Hamel Husain Blog feed)
-	$(Q)python feed_generators/hamel_blog.py
-	$(call print_success,Hamel Husain Blog feed generated)
 
 .PHONY: feeds_cursor
 feeds_cursor: ## Generate RSS feed for Cursor Blog (incremental)
@@ -162,20 +121,6 @@ feeds_windsurf_blog: ## Generate RSS feed for Windsurf Blog
 	$(call print_info,Generating Windsurf Blog feed)
 	$(Q)python feed_generators/windsurf_blog.py
 	$(call print_success,Windsurf Blog feed generated)
-
-.PHONY: feeds_windsurf_changelog
-feeds_windsurf_changelog: ## Generate RSS feed for Windsurf Changelog
-	$(call check_venv)
-	$(call print_info,Generating Windsurf Changelog feed)
-	$(Q)python feed_generators/windsurf_changelog.py
-	$(call print_success,Windsurf Changelog feed generated)
-
-.PHONY: feeds_windsurf_next_changelog
-feeds_windsurf_next_changelog: ## Generate RSS feed for Windsurf Next Changelog
-	$(call check_venv)
-	$(call print_info,Generating Windsurf Next Changelog feed)
-	$(Q)python feed_generators/windsurf_next_changelog.py
-	$(call print_success,Windsurf Next Changelog feed generated)
 
 .PHONY: feeds_the_batch
 feeds_the_batch: ## Generate RSS feed for The Batch by DeepLearning.AI

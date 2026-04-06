@@ -39,7 +39,7 @@ def setup_feed_links(fg: FeedGenerator, blog_url: str, feed_name: str) -> None:
     """
     # Self link first - this becomes <atom:link rel="self">
     fg.link(
-        href=f"https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_{feed_name}.xml",
+        href=f"https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_{feed_name}.xml",
         rel="self",
     )
     # Alternate link last - this becomes the main <link>

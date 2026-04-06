@@ -103,7 +103,7 @@ def generate_rss_feed(blog_posts, feed_name="windsurf_blog"):
         fg.author({"name": "Windsurf"})
         fg.subtitle("Read about the latest announcements from Windsurf")
         fg.link(href="https://windsurf.com/blog", rel="alternate")
-        fg.link(href=f"https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_{feed_name}.xml", rel="self")
+        fg.link(href=f"https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_{feed_name}.xml", rel="self")
 
         # Sort for correct feed order (newest first in output)
         blog_posts_sorted = sort_posts_for_feed(blog_posts, date_field="date")
