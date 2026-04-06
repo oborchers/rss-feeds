@@ -4,7 +4,7 @@
     <title>AI FIRST Podcast</title>
     <link>https://ai-first.ai/podcast</link>
     <description>KI-Transformation, Produktivitaet und die Zukunft der Arbeit</description>
-    <atom:link href="https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_ai_first_podcast.xml" rel="self"/>
+    <atom:link href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_ai_first_podcast.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
@@ -13,7 +13,7 @@
       <link>https://ai-first.ai/podcast</link>
     </image>
     <language>de</language>
-    <lastBuildDate>Mon, 06 Apr 2026 15:14:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 20:36:58 +0000</lastBuildDate>
     <item>
       <title>Die andere Seite der KI-Medaille: Brain Fry, Arbeitsmarkt-Druck und Adaptionsprobleme</title>
       <link>https://ai-first.ai/podcast/die-andere-seite-der-ki-medaille-brain-fry-arbeitsmarkt-druck-und-adaptionsprobleme</link>

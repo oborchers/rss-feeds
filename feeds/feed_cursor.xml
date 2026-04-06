@@ -4,7 +4,7 @@
     <title>Cursor Blog</title>
     <link>https://cursor.com/blog</link>
     <description>Latest updates from Cursor</description>
-    <atom:link href="https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_cursor.xml" rel="self"/>
+    <atom:link href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_cursor.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
@@ -13,7 +13,14 @@
       <link>https://cursor.com/blog</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Apr 2026 15:14:16 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 20:37:01 +0000</lastBuildDate>
+    <item>
+      <title>Better MoE model inference with warp decode</title>
+      <link>https://cursor.com/blog/warp-decode</link>
+      <guid isPermaLink="false">https://cursor.com/blog/warp-decode</guid>
+      <category>research</category>
+      <pubDate>Mon, 06 Apr 2026 12:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Meet the new Cursor</title>
       <link>https://cursor.com/blog/cursor-3</link>

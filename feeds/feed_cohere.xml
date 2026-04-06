@@ -4,7 +4,7 @@
     <title>The Cohere Blog</title>
     <link>https://cohere.com/blog</link>
     <description>Enterprise AI research and product updates from Cohere</description>
-    <atom:link href="https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_cohere.xml" rel="self"/>
+    <atom:link href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_cohere.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
@@ -13,7 +13,7 @@
       <link>https://cohere.com/blog</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Apr 2026 18:59:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 20:37:01 +0000</lastBuildDate>
     <item>
       <title>Cohere advances sovereign AI capabilities with NVIDIA</title>
       <link>https://cohere.com/blog/cohere-sovereign-ai-nvidia</link>
