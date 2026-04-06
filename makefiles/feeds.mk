@@ -87,11 +87,18 @@ feeds_blogsurgeai: ## Generate RSS feed for Surge AI Blog
 	$(call print_success,Surge AI Blog feed generated)
 
 .PHONY: feeds_xainews
-feeds_xainews: ## Generate RSS feed for xAI News
+feeds_xainews: ## Generate RSS feed for xAI News (incremental)
 	$(call check_venv)
 	$(call print_info,Generating xAI News feed)
 	$(Q)python feed_generators/xainews_blog.py
 	$(call print_success,xAI News feed generated)
+
+.PHONY: feeds_xainews_full
+feeds_xainews_full: ## Generate RSS feed for xAI News (full reset)
+	$(call check_venv)
+	$(call print_info,Generating xAI News feed - FULL RESET)
+	$(Q)python feed_generators/xainews_blog.py --full
+	$(call print_success,xAI News feed generated - full reset)
 
 .PHONY: feeds_chanderramesh
 feeds_chanderramesh: ## Generate RSS feed for Chander Ramesh's writing
