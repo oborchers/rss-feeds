@@ -213,6 +213,20 @@ feeds_weaviate_full: ## Generate RSS feed for Weaviate Blog (full reset)
 	$(Q)python feed_generators/weaviate_blog.py --full
 	$(call print_success,Weaviate Blog feed generated - full reset)
 
+.PHONY: feeds_pinecone
+feeds_pinecone: ## Generate RSS feed for Pinecone Blog (incremental, Selenium)
+	$(call check_venv)
+	$(call print_info,Generating Pinecone Blog feed)
+	$(Q)python feed_generators/pinecone_blog.py
+	$(call print_success,Pinecone Blog feed generated)
+
+.PHONY: feeds_pinecone_full
+feeds_pinecone_full: ## Generate RSS feed for Pinecone Blog (full reset, Selenium)
+	$(call check_venv)
+	$(call print_info,Generating Pinecone Blog feed - FULL RESET)
+	$(Q)python feed_generators/pinecone_blog.py --full
+	$(call print_success,Pinecone Blog feed generated - full reset)
+
 .PHONY: clean_feeds
 clean_feeds: ## Clean generated RSS feed files
 	$(call print_warning,Removing generated RSS feeds)
