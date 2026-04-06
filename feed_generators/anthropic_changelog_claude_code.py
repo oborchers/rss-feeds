@@ -1,24 +1,15 @@
 import logging
 import re
-from pathlib import Path
 
 import requests
 from feedgen.feed import FeedGenerator
+
+from utils import get_feeds_dir, setup_feed_links
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
-
-
-def get_project_root():
-    return Path(__file__).parent.parent
-
-
-def ensure_feeds_directory():
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
 
 
 def fetch_changelog_content(
@@ -109,17 +100,12 @@ def generate_rss_feed(items, feed_name="anthropic_changelog_claude_code"):
         fg = FeedGenerator()
         fg.title("Claude Code Changelog")
         fg.description("Version updates and changes from Claude Code CHANGELOG.md")
-        fg.link(href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md")
         fg.language("en")
 
         fg.author({"name": "Anthropic"})
         fg.logo("https://www.anthropic.com/images/icons/apple-touch-icon.png")
         fg.subtitle("Claude Code Changelog")
-        fg.link(
-            href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-            rel="alternate",
-        )
-        fg.link(href=f"https://anthropic.com/feed_{feed_name}.xml", rel="self")
+        setup_feed_links(fg, blog_url="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", feed_name=feed_name)
 
         # feedgen reverses order, so reverse items to maintain newest-first
         for item in reversed(items):
@@ -140,7 +126,7 @@ def generate_rss_feed(items, feed_name="anthropic_changelog_claude_code"):
 
 def save_rss_feed(feed_generator, feed_name="anthropic_changelog_claude_code"):
     try:
-        feeds_dir = ensure_feeds_directory()
+        feeds_dir = get_feeds_dir()
         output_filename = feeds_dir / f"feed_{feed_name}.xml"
         feed_generator.rss_file(str(output_filename), pretty=True)
         logger.info(f"Successfully saved RSS feed to {output_filename}")

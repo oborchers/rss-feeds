@@ -4,8 +4,6 @@ import logging
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
-from pathlib import Path
-
 import pytz
 import undetected_chromedriver as uc
 from bs4 import BeautifulSoup
@@ -14,7 +12,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from utils import setup_feed_links, sort_posts_for_feed
+from utils import get_cache_dir, get_chrome_major_version, get_feeds_dir, setup_feed_links, sort_posts_for_feed
 
 FEED_NAME = "xainews"
 NEWS_URL = "https://x.ai/news"
@@ -33,23 +31,9 @@ def stable_fallback_date(identifier):
     return epoch + timedelta(days=hash_val)
 
 
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
 def get_cache_file():
     """Get the cache file path."""
-    cache_dir = get_project_root() / "cache"
-    cache_dir.mkdir(exist_ok=True)
-    return cache_dir / f"{FEED_NAME}_posts.json"
-
-
-def get_feeds_dir():
-    """Get the feeds directory path."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
+    return get_cache_dir() / f"{FEED_NAME}_posts.json"
 
 
 def load_cache():
@@ -132,7 +116,8 @@ def setup_selenium_driver():
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/131.0.0.0 Safari/537.36"
     )
-    return uc.Chrome(options=options)
+    version = get_chrome_major_version()
+    return uc.Chrome(options=options, version_main=version)
 
 
 def fetch_news_content(url=NEWS_URL):

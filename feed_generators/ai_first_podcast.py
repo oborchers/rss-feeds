@@ -3,14 +3,13 @@ import json
 import logging
 import time
 from datetime import datetime, timedelta
-from pathlib import Path
 
 import pytz
 import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
-from utils import setup_feed_links, sort_posts_for_feed
+from utils import get_cache_dir, get_feeds_dir, setup_feed_links, sort_posts_for_feed
 
 FEED_NAME = "ai_first_podcast"
 BLOG_URL = "https://ai-first.ai/podcast"
@@ -38,23 +37,9 @@ def stable_fallback_date(identifier):
     return epoch + timedelta(days=hash_val)
 
 
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
 def get_cache_file():
     """Get the cache file path."""
-    cache_dir = get_project_root() / "cache"
-    cache_dir.mkdir(exist_ok=True)
-    return cache_dir / f"{FEED_NAME}_posts.json"
-
-
-def get_feeds_dir():
-    """Get the feeds directory path."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
+    return get_cache_dir() / f"{FEED_NAME}_posts.json"
 
 
 def load_cache():

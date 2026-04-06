@@ -4,17 +4,16 @@ import logging
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
-from pathlib import Path
 
 import pytz
-import undetected_chromedriver as uc
+import undetected_chromedriver  # noqa: F401
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from utils import sort_posts_for_feed
+from utils import get_cache_dir, get_feeds_dir, setup_feed_links, setup_selenium_driver, sort_posts_for_feed
 
 FEED_NAME = "anthropic_news"
 BLOG_URL = "https://www.anthropic.com/news"
@@ -37,23 +36,9 @@ def stable_fallback_date(identifier):
     return epoch + timedelta(days=hash_val)
 
 
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
-def ensure_feeds_directory():
-    """Ensure the feeds directory exists."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
-
-
 def get_cache_file():
     """Get the cache file path."""
-    cache_dir = get_project_root() / "cache"
-    cache_dir.mkdir(exist_ok=True)
-    return cache_dir / f"{FEED_NAME}_posts.json"
+    return get_cache_dir() / f"{FEED_NAME}_posts.json"
 
 
 def load_cache():
@@ -121,17 +106,6 @@ def merge_articles(new_articles, cached_articles):
     # Sort for correct feed order (newest first in output)
     return sort_posts_for_feed(merged, date_field="date")
 
-
-def setup_selenium_driver():
-    """Set up Selenium WebDriver with undetected-chromedriver."""
-    options = uc.ChromeOptions()
-    options.add_argument("--headless")
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_argument(
-        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-    )
-    return uc.Chrome(options=options)
 
 
 def fetch_news_content(url=BLOG_URL, max_clicks=20):
@@ -437,11 +411,7 @@ def generate_rss_feed(articles, feed_name="anthropic_news"):
         fg.author({"name": "Anthropic News"})
         fg.logo("https://www.anthropic.com/images/icons/apple-touch-icon.png")
         fg.subtitle("Latest updates from Anthropic's newsroom")
-        # Set links - self link first, then alternate (which becomes the main <link>)
-        fg.link(
-            href=f"https://www.anthropic.com/feeds/feed_{feed_name}.xml", rel="self"
-        )
-        fg.link(href="https://www.anthropic.com/news", rel="alternate")
+        setup_feed_links(fg, blog_url=BLOG_URL, feed_name=FEED_NAME)
 
         # Sort articles for correct feed order (newest first in output)
         articles_sorted = sort_posts_for_feed(articles, date_field="date")
@@ -468,7 +438,7 @@ def save_rss_feed(feed_generator, feed_name="anthropic_news"):
     """Save the RSS feed to a file in the feeds directory."""
     try:
         # Ensure feeds directory exists and get its path
-        feeds_dir = ensure_feeds_directory()
+        feeds_dir = get_feeds_dir()
 
         # Create the output file path
         output_filename = feeds_dir / f"feed_{feed_name}.xml"

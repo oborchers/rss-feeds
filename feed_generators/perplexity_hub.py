@@ -4,8 +4,6 @@ import logging
 import re
 import time
 from datetime import datetime, timedelta
-from pathlib import Path
-
 import pytz
 import undetected_chromedriver as uc
 from bs4 import BeautifulSoup
@@ -14,7 +12,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from utils import setup_feed_links, sort_posts_for_feed
+from utils import get_cache_dir, get_chrome_major_version, get_feeds_dir, setup_feed_links, sort_posts_for_feed
 
 FEED_NAME = "perplexity_hub"
 BLOG_URL = "https://www.perplexity.ai/hub"
@@ -37,23 +35,9 @@ def stable_fallback_date(identifier):
     return epoch + timedelta(days=hash_val)
 
 
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
 def get_cache_file():
     """Get the cache file path."""
-    cache_dir = get_project_root() / "cache"
-    cache_dir.mkdir(exist_ok=True)
-    return cache_dir / f"{FEED_NAME}_posts.json"
-
-
-def get_feeds_dir():
-    """Get the feeds directory path."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
+    return get_cache_dir() / f"{FEED_NAME}_posts.json"
 
 
 def load_cache():
@@ -138,7 +122,8 @@ def setup_selenium_driver():
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--lang=en-US")
     options.add_argument(f"--user-agent={USER_AGENT}")
-    driver = uc.Chrome(options=options)
+    version = get_chrome_major_version()
+    driver = uc.Chrome(options=options, version_main=version)
     # Set Accept-Language HTTP header via CDP. This is what the server
     # actually checks for locale routing (not --lang or setLocaleOverride).
     driver.execute_cdp_cmd("Network.enable", {})

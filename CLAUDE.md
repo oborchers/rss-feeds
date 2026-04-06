@@ -67,7 +67,7 @@ Three patterns exist based on how the target site loads content:
 
 For blogs where all content loads on first request.
 
-**Examples**: `ollama_blog.py`, `blogsurgeai_feed_generator.py`
+**Examples**: `ollama_blog.py`, `blogsurgeai_blog.py`
 
 **Key functions**:
 - `fetch_blog_content(url)` - HTTP request with User-Agent header
@@ -263,9 +263,9 @@ Before submitting your PR, verify:
 
 ## GitHub Actions
 
-### Workflow Split: Hourly vs Daily
+### Workflow Split
 
-Two workflows run on different schedules to optimize GitHub Actions minutes:
+Two workflows split generators by type to keep the lightweight run fast:
 
 - **`run_feeds.yml`** runs **daily at midnight UTC**, executes only requests-based generators (`--skip-selenium`). No Chrome install needed. Lightweight and fast.
 - **`run_selenium_feeds.yml`** runs **daily at midnight UTC**, executes only Selenium-based generators (`--selenium-only`). Installs Chrome for headless browsing.
@@ -274,9 +274,9 @@ Two workflows run on different schedules to optimize GitHub Actions minutes:
 Selenium generators are detected automatically by `run_all_feeds.py` checking for `undetected_chromedriver` imports in each script. No manual registration needed.
 
 **When adding a new generator:**
-- requests-based: automatically included in hourly runs
-- Selenium-based (imports `undetected_chromedriver`): automatically included in daily runs
+- requests-based: automatically included in daily requests run
+- Selenium-based (imports `undetected_chromedriver`): automatically included in daily Selenium run
 
-**Current Selenium generators (daily):** `anthropic_news_blog.py`, `anthropic_research_blog.py`, `meta_ai_blog.py`, `perplexity_hub.py`, `xainews_blog.py`
+**Current Selenium generators (daily):** `anthropic_news_blog.py`, `anthropic_research_blog.py`, `meta_ai_blog.py`, `mistral_blog.py`, `perplexity_hub.py`, `pinecone_blog.py`, `xainews_blog.py`
 
 - **`validate_feeds.yml`** runs after each feed workflow completes. Checks all XML feeds for empty files (error, exit 1) and stale content older than 60 days (warning, logged but exit 0). Also triggered manually via workflow_dispatch.

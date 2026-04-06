@@ -3,25 +3,12 @@ from datetime import datetime
 import pytz
 from feedgen.feed import FeedGenerator
 import logging
-from pathlib import Path
 
-from utils import setup_feed_links, sort_posts_for_feed
+from utils import get_feeds_dir, setup_feed_links, sort_posts_for_feed
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
-
-
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
-def ensure_feeds_directory():
-    """Ensure the feeds directory exists."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
 
 
 def fetch_blog_posts():
@@ -129,7 +116,7 @@ def generate_rss_feed(blog_posts, feed_name="windsurf_blog"):
 def save_rss_feed(feed_generator, feed_name="windsurf_blog"):
     """Save the RSS feed to a file in the feeds directory."""
     try:
-        feeds_dir = ensure_feeds_directory()
+        feeds_dir = get_feeds_dir()
         output_filename = feeds_dir / f"feed_{feed_name}.xml"
         feed_generator.rss_file(str(output_filename), pretty=True)
         logger.info(f"Successfully saved RSS feed to {output_filename}")

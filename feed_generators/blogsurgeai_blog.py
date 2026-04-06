@@ -11,6 +11,8 @@ from datetime import datetime, timedelta
 from dateutil import parser
 import pytz
 
+from utils import get_feeds_dir, setup_feed_links
+
 
 def stable_fallback_date(identifier):
     """Generate a stable date from a URL or title hash."""
@@ -27,11 +29,7 @@ def generate_blogsurgeai_feed():
     fg.id("https://www.surgehq.ai/blog")
     fg.title("Surge AI Blog")
     fg.author({"name": "Surge AI", "email": "team@surgehq.ai"})
-    fg.link(href="https://www.surgehq.ai/blog", rel="alternate")
-    fg.link(
-        href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_blogsurgeai.xml",
-        rel="self",
-    )
+    setup_feed_links(fg, blog_url="https://www.surgehq.ai/blog", feed_name="blogsurgeai")
     fg.language("en")
     fg.description(
         "New methods, current trends & software infrastructure for NLP. Articles written by our senior engineering leads from Google, Facebook, Twitter, Harvard, MIT, and Y Combinator"
@@ -122,8 +120,9 @@ def generate_blogsurgeai_feed():
             continue
 
     # Generate RSS feed
-    output_path = "feeds/feed_blogsurgeai.xml"
-    fg.rss_file(output_path, pretty=True)
+    feeds_dir = get_feeds_dir()
+    output_path = feeds_dir / "feed_blogsurgeai.xml"
+    fg.rss_file(str(output_path), pretty=True)
     print(f"\nRSS feed generated successfully: {output_path}")
 
 

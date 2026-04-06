@@ -3,14 +3,13 @@ import json
 import logging
 import re
 from datetime import datetime
-from pathlib import Path
 
 import pytz
 import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
-from utils import setup_feed_links, sort_posts_for_feed
+from utils import get_cache_dir, get_feeds_dir, setup_feed_links, sort_posts_for_feed
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -19,21 +18,9 @@ BLOG_URL = "https://cursor.com/blog"
 FEED_NAME = "cursor"
 
 
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
 def get_cache_file():
     """Get the cache file path."""
-    return get_project_root() / "cache" / "cursor_posts.json"
-
-
-def get_feeds_dir():
-    """Get the feeds directory path."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
+    return get_cache_dir() / "cursor_posts.json"
 
 
 def fetch_page(url):

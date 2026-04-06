@@ -4,25 +4,12 @@ from datetime import datetime
 import pytz
 from feedgen.feed import FeedGenerator
 import logging
-from pathlib import Path
+
+from utils import get_feeds_dir, setup_feed_links
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
-
-
-def get_project_root():
-    """Get the project root directory."""
-    # Since this script is in feed_generators/ollama_blog.py,
-    # we need to go up one level to reach the project root
-    return Path(__file__).parent.parent
-
-
-def ensure_feeds_directory():
-    """Ensure the feeds directory exists."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
 
 
 def fetch_blog_content(url):
@@ -78,15 +65,13 @@ def generate_rss_feed(blog_posts, feed_name="ollama"):
         fg = FeedGenerator()
         fg.title("Ollama Blog")
         fg.description("Get up and running with large language models.")
-        fg.link(href="https://ollama.com/blog")
         fg.language("en")
 
         # Set feed metadata
         fg.author({"name": "Ollama"})
         fg.logo("https://ollama.com/public/icon-64x64.png")
         fg.subtitle("Latest updates from Ollama")
-        fg.link(href="https://ollama.com/blog", rel="alternate")
-        fg.link(href=f"https://ollama.com/blog/feed_{feed_name}.xml", rel="self")
+        setup_feed_links(fg, blog_url="https://ollama.com/blog", feed_name=feed_name)
 
         # Add entries
         for post in blog_posts:
@@ -109,7 +94,7 @@ def save_rss_feed(feed_generator, feed_name="ollama"):
     """Save the RSS feed to a file in the feeds directory."""
     try:
         # Ensure feeds directory exists and get its path
-        feeds_dir = ensure_feeds_directory()
+        feeds_dir = get_feeds_dir()
 
         # Create the output file path
         output_filename = feeds_dir / f"feed_{feed_name}.xml"

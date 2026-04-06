@@ -4,25 +4,12 @@ from datetime import datetime
 import pytz
 from feedgen.feed import FeedGenerator
 import logging
-from pathlib import Path
 
-from utils import sort_posts_for_feed
+from utils import get_feeds_dir, setup_feed_links, sort_posts_for_feed
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
-
-
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
-def ensure_feeds_directory():
-    """Ensure the feeds directory exists."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
 
 
 def fetch_engineering_content(url="https://www.anthropic.com/engineering"):
@@ -140,15 +127,13 @@ def generate_rss_feed(articles, feed_name="anthropic_engineering"):
         fg = FeedGenerator()
         fg.title("Anthropic Engineering Blog")
         fg.description("Latest engineering articles and insights from Anthropic's engineering team")
-        fg.link(href="https://www.anthropic.com/engineering")
         fg.language("en")
 
         # Set feed metadata
         fg.author({"name": "Anthropic Engineering Team"})
         fg.logo("https://www.anthropic.com/images/icons/apple-touch-icon.png")
         fg.subtitle("Inside the team building reliable AI systems")
-        fg.link(href="https://www.anthropic.com/engineering", rel="alternate")
-        fg.link(href=f"https://anthropic.com/engineering/feed_{feed_name}.xml", rel="self")
+        setup_feed_links(fg, blog_url="https://www.anthropic.com/engineering", feed_name=feed_name)
 
         # Sort articles for correct feed order (newest first in output)
         articles_sorted = sort_posts_for_feed(articles, date_field="date")
@@ -175,7 +160,7 @@ def save_rss_feed(feed_generator, feed_name="anthropic_engineering"):
     """Save the RSS feed to a file in the feeds directory."""
     try:
         # Ensure feeds directory exists and get its path
-        feeds_dir = ensure_feeds_directory()
+        feeds_dir = get_feeds_dir()
 
         # Create the output file path
         output_filename = feeds_dir / f"feed_{feed_name}.xml"

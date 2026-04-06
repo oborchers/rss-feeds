@@ -1,41 +1,17 @@
-import undetected_chromedriver as uc
+import undetected_chromedriver  # noqa: F401
 from bs4 import BeautifulSoup
 from datetime import datetime
 import pytz
 from feedgen.feed import FeedGenerator
 import time
 import logging
-from pathlib import Path
 
-from utils import sort_posts_for_feed
+from utils import get_feeds_dir, setup_feed_links, setup_selenium_driver, sort_posts_for_feed
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-
-def get_project_root():
-    """Get the project root directory."""
-    return Path(__file__).parent.parent
-
-
-def ensure_feeds_directory():
-    """Ensure the feeds directory exists."""
-    feeds_dir = get_project_root() / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
-
-
-def setup_selenium_driver():
-    """Set up Selenium WebDriver with undetected-chromedriver."""
-    options = uc.ChromeOptions()
-    options.add_argument("--headless")  # Ensure headless mode is enabled
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_argument(
-        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-    )
-    return uc.Chrome(options=options)
 
 
 def fetch_research_content_selenium(url="https://www.anthropic.com/research"):
@@ -246,15 +222,13 @@ def generate_rss_feed(articles, feed_name="anthropic_research"):
         fg = FeedGenerator()
         fg.title("Anthropic Research")
         fg.description("Latest research papers and updates from Anthropic")
-        fg.link(href="https://www.anthropic.com/research")
         fg.language("en")
 
         # Set feed metadata
         fg.author({"name": "Anthropic Research Team"})
         fg.logo("https://www.anthropic.com/images/icons/apple-touch-icon.png")
         fg.subtitle("Latest research from Anthropic")
-        fg.link(href="https://www.anthropic.com/research", rel="alternate")
-        fg.link(href=f"https://anthropic.com/research/feed_{feed_name}.xml", rel="self")
+        setup_feed_links(fg, blog_url="https://www.anthropic.com/research", feed_name="anthropic_research")
 
         # Sort articles for correct feed order (newest first in output)
         # Articles without dates will appear at the end
@@ -286,7 +260,7 @@ def save_rss_feed(feed_generator, feed_name="anthropic_research"):
     """Save the RSS feed to a file in the feeds directory."""
     try:
         # Ensure feeds directory exists and get its path
-        feeds_dir = ensure_feeds_directory()
+        feeds_dir = get_feeds_dir()
 
         # Create the output file path
         output_filename = feeds_dir / f"feed_{feed_name}.xml"

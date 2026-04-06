@@ -1,13 +1,11 @@
 import logging
 from datetime import datetime, timedelta
-from pathlib import Path
-
 import pytz
 import requests
 from bs4 import BeautifulSoup
 from feedgen.feed import FeedGenerator
 
-from utils import setup_feed_links, sort_posts_for_feed
+from utils import get_feeds_dir, setup_feed_links, sort_posts_for_feed
 
 FEED_NAME = "groq"
 BLOG_URL = "https://groq.com/blog/"
@@ -32,10 +30,6 @@ def stable_fallback_date(identifier):
     return epoch + timedelta(days=hash_val)
 
 
-def get_feeds_dir():
-    feeds_dir = Path(__file__).parent.parent / "feeds"
-    feeds_dir.mkdir(exist_ok=True)
-    return feeds_dir
 
 
 def fetch_blog_content():

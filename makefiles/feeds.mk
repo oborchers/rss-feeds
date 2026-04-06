@@ -56,7 +56,7 @@ feeds_ollama: ## Generate RSS feed for Ollama Blog
 feeds_blogsurgeai: ## Generate RSS feed for Surge AI Blog
 	$(call check_venv)
 	$(call print_info,Generating Surge AI Blog feed)
-	$(Q)python feed_generators/blogsurgeai_feed_generator.py
+	$(Q)python feed_generators/blogsurgeai_blog.py
 	$(call print_success,Surge AI Blog feed generated)
 
 .PHONY: feeds_xainews
