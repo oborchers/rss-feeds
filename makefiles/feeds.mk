@@ -177,6 +177,20 @@ feeds_the_batch: ## Generate RSS feed for The Batch by DeepLearning.AI
 	$(Q)python feed_generators/deeplearningai_the_batch.py
 	$(call print_success,The Batch feed generated)
 
+.PHONY: feeds_meta_ai
+feeds_meta_ai: ## Generate RSS feed for Meta AI Blog (incremental)
+	$(call check_venv)
+	$(call print_info,Generating Meta AI Blog feed)
+	$(Q)python feed_generators/meta_ai_blog.py
+	$(call print_success,Meta AI Blog feed generated)
+
+.PHONY: feeds_meta_ai_full
+feeds_meta_ai_full: ## Generate RSS feed for Meta AI Blog (full reset)
+	$(call check_venv)
+	$(call print_info,Generating Meta AI Blog feed - FULL RESET)
+	$(Q)python feed_generators/meta_ai_blog.py --full
+	$(call print_success,Meta AI Blog feed generated - full reset)
+
 .PHONY: feeds_ai_first_podcast
 feeds_ai_first_podcast: ## Generate RSS feed for AI FIRST Podcast
 	$(call check_venv)
