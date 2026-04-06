@@ -13,7 +13,14 @@
       <link>https://cursor.com/blog</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Apr 2026 18:16:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 19:22:33 +0000</lastBuildDate>
+    <item>
+      <title>Better MoE model inference with warp decode</title>
+      <link>https://cursor.com/blog/warp-decode</link>
+      <guid isPermaLink="false">https://cursor.com/blog/warp-decode</guid>
+      <category>research</category>
+      <pubDate>Mon, 06 Apr 2026 12:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Meet the new Cursor</title>
       <link>https://cursor.com/blog/cursor-3</link>
@@ -90,13 +97,6 @@
       <guid isPermaLink="false">https://cursor.com/blog/automations</guid>
       <category>product</category>
       <pubDate>Thu, 05 Mar 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Cursor is now available in JetBrains IDEs</title>
-      <link>https://cursor.com/blog/jetbrains-acp</link>
-      <guid isPermaLink="false">https://cursor.com/blog/jetbrains-acp</guid>
-      <category>product</category>
-      <pubDate>Wed, 04 Mar 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
       <title>PlanetScale protects production reliability with Bugbot</title>
