@@ -263,5 +263,18 @@ Before submitting your PR, verify:
 
 ## GitHub Actions
 
-- `run_feeds.yml` - Runs hourly, executes `run_all_feeds.py`, commits updated XML files
-- `test_feed.yml` - Tests feed generation on PRs
+### Workflow Split: Hourly vs Daily
+
+Two workflows run on different schedules to optimize GitHub Actions minutes:
+
+- **`run_feeds.yml`** runs **daily at midnight UTC**, executes only requests-based generators (`--skip-selenium`). No Chrome install needed. Lightweight and fast.
+- **`run_selenium_feeds.yml`** runs **daily at midnight UTC**, executes only Selenium-based generators (`--selenium-only`). Installs Chrome for headless browsing.
+- **`test_feed.yml`** tests feed generation manually (workflow_dispatch only).
+
+Selenium generators are detected automatically by `run_all_feeds.py` checking for `undetected_chromedriver` imports in each script. No manual registration needed.
+
+**When adding a new generator:**
+- requests-based: automatically included in hourly runs
+- Selenium-based (imports `undetected_chromedriver`): automatically included in daily runs
+
+**Current Selenium generators (daily):** `anthropic_news_blog.py`, `anthropic_research_blog.py`, `meta_ai_blog.py`, `openai_research_blog.py`, `perplexity_hub.py`, `xainews_blog.py`

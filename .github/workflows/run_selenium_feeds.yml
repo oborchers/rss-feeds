@@ -1,4 +1,4 @@
-name: Run Feeds
+name: Run Selenium Feeds (Daily)
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-feeds:
+  run-selenium-feeds:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11" # Use Python 3.11 to include distutils
+          python-version: "3.11"
 
       - name: Install uv
         run: |
@@ -31,25 +31,31 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y python3-setuptools
 
-      - name: Install Python dependencies and run feed generators
+      - name: Install Chrome for Selenium
+        run: |
+          sudo apt-get install -y wget gnupg
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome-keyring.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Install Python dependencies and run Selenium feed generators
         run: |
           set -e
           uv venv
           uv pip install -r requirements.txt
-          uv run feed_generators/run_all_feeds.py --skip-selenium
+          uv run feed_generators/run_all_feeds.py --selenium-only
 
       - name: Commit and push feed
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-          # Add feed XML files (cache files no longer used)
           git add feeds/*.xml
 
-          # Check if there are any changes to commit
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m 'Update RSS feed'
+            git commit -m 'Update RSS feed (Selenium, daily)'
             git push
           fi
