@@ -278,3 +278,5 @@ Selenium generators are detected automatically by `run_all_feeds.py` checking fo
 - Selenium-based (imports `undetected_chromedriver`): automatically included in daily runs
 
 **Current Selenium generators (daily):** `anthropic_news_blog.py`, `anthropic_research_blog.py`, `meta_ai_blog.py`, `openai_research_blog.py`, `perplexity_hub.py`, `xainews_blog.py`
+
+- **`validate_feeds.yml`** runs after each feed workflow completes. Checks all XML feeds for empty files (error, exit 1) and stale content older than 60 days (warning, logged but exit 0). Also triggered manually via workflow_dispatch.
