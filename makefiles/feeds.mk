@@ -93,6 +93,20 @@ feeds_xainews_full: ## Generate RSS feed for xAI News (full reset)
 	$(Q)python feed_generators/xainews_blog.py --full
 	$(call print_success,xAI News feed generated - full reset)
 
+.PHONY: feeds_cohere
+feeds_cohere: ## Generate RSS feed for Cohere Blog (incremental)
+	$(call check_venv)
+	$(call print_info,Generating Cohere Blog feed)
+	$(Q)python feed_generators/cohere_blog.py
+	$(call print_success,Cohere Blog feed generated)
+
+.PHONY: feeds_cohere_full
+feeds_cohere_full: ## Generate RSS feed for Cohere Blog (full reset)
+	$(call check_venv)
+	$(call print_info,Generating Cohere Blog feed - FULL RESET)
+	$(Q)python feed_generators/cohere_blog.py --full
+	$(call print_success,Cohere Blog feed generated - full reset)
+
 .PHONY: feeds_chanderramesh
 feeds_chanderramesh: ## Generate RSS feed for Chander Ramesh's writing
 	$(call check_venv)
