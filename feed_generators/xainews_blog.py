@@ -1,13 +1,23 @@
-import requests
-import xml.etree.ElementTree as ET
-from bs4 import BeautifulSoup
-from datetime import datetime, timedelta
-import pytz
-from feedgen.feed import FeedGenerator
+import argparse
+import json
 import logging
+import time
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta
 from pathlib import Path
 
-from utils import sort_posts_for_feed
+import pytz
+import undetected_chromedriver as uc
+from bs4 import BeautifulSoup
+from feedgen.feed import FeedGenerator
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from utils import setup_feed_links, sort_posts_for_feed
+
+FEED_NAME = "xainews"
+NEWS_URL = "https://x.ai/news"
 
 # Set up logging
 logging.basicConfig(
@@ -28,25 +38,147 @@ def get_project_root():
     return Path(__file__).parent.parent
 
 
-def ensure_feeds_directory():
-    """Ensure the feeds directory exists."""
+def get_cache_file():
+    """Get the cache file path."""
+    cache_dir = get_project_root() / "cache"
+    cache_dir.mkdir(exist_ok=True)
+    return cache_dir / f"{FEED_NAME}_posts.json"
+
+
+def get_feeds_dir():
+    """Get the feeds directory path."""
     feeds_dir = get_project_root() / "feeds"
     feeds_dir.mkdir(exist_ok=True)
     return feeds_dir
 
 
-def fetch_news_content(url="https://x.ai/news"):
-    """Fetch news content from xAI's website."""
+def load_cache():
+    """Load existing cache or return empty structure."""
+    cache_file = get_cache_file()
+    if cache_file.exists():
+        with open(cache_file, "r") as f:
+            data = json.load(f)
+            logger.info(
+                f"Loaded cache with {len(data.get('articles', []))} articles"
+            )
+            return data
+    logger.info("No cache file found, will do full fetch")
+    return {"last_updated": None, "articles": []}
+
+
+def save_cache(articles):
+    """Save articles to cache file."""
+    cache_file = get_cache_file()
+    serializable = []
+    for article in articles:
+        article_copy = article.copy()
+        if isinstance(article_copy.get("date"), datetime):
+            article_copy["date"] = article_copy["date"].isoformat()
+        serializable.append(article_copy)
+
+    data = {
+        "last_updated": datetime.now(pytz.UTC).isoformat(),
+        "articles": serializable,
+    }
+    with open(cache_file, "w") as f:
+        json.dump(data, f, indent=2)
+    logger.info(f"Saved cache with {len(articles)} articles to {cache_file}")
+
+
+def deserialize_articles(articles):
+    """Convert cached articles back to proper format with datetime objects."""
+    result = []
+    for article in articles:
+        article_copy = article.copy()
+        if isinstance(article_copy.get("date"), str):
+            try:
+                article_copy["date"] = datetime.fromisoformat(article_copy["date"])
+            except ValueError:
+                article_copy["date"] = stable_fallback_date(
+                    article_copy.get("link", "")
+                )
+        result.append(article_copy)
+    return result
+
+
+def merge_articles(new_articles, cached_articles):
+    """Merge new articles into cache, dedupe by link, sort by date."""
+    existing_links = {a["link"] for a in cached_articles}
+    merged = list(cached_articles)
+
+    added_count = 0
+    for article in new_articles:
+        if article["link"] not in existing_links:
+            merged.append(article)
+            existing_links.add(article["link"])
+            added_count += 1
+
+    logger.info(f"Added {added_count} new articles to cache")
+    return sort_posts_for_feed(merged, date_field="date")
+
+
+def setup_selenium_driver():
+    """Set up Selenium WebDriver with undetected-chromedriver.
+
+    xAI's site is behind Cloudflare, which blocks plain requests.
+    undetected-chromedriver bypasses bot detection.
+    """
+    options = uc.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--window-size=1920,10000")
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument(
+        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/131.0.0.0 Safari/537.36"
+    )
+    return uc.Chrome(options=options)
+
+
+def fetch_news_content(url=NEWS_URL):
+    """Fetch the fully loaded HTML content of the xAI news page using Selenium.
+
+    The xAI news page is behind Cloudflare and requires a real browser.
+    All articles load on the initial page without pagination.
+    """
+    driver = None
     try:
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-        }
-        response = requests.get(url, headers=headers, timeout=10)
-        response.raise_for_status()
-        return response.text
-    except requests.RequestException as e:
-        logger.error(f"Error fetching news content: {str(e)}")
+        logger.info(f"Fetching content from URL: {url}")
+        driver = setup_selenium_driver()
+        driver.get(url)
+
+        # Wait for initial page load
+        wait_time = 5
+        logger.info(f"Waiting {wait_time} seconds for the page to fully load...")
+        time.sleep(wait_time)
+
+        # Wait for article containers to be present
+        try:
+            WebDriverWait(driver, 15).until(
+                EC.presence_of_element_located(
+                    (By.CSS_SELECTOR, "div.group.relative")
+                )
+            )
+            logger.info("Article containers loaded successfully")
+        except Exception:
+            logger.warning(
+                "Could not confirm articles loaded, proceeding anyway..."
+            )
+
+        # Scroll to bottom to trigger any lazy loading
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(2)
+
+        html_content = driver.page_source
+        logger.info("Successfully fetched HTML content")
+        return html_content
+
+    except Exception as e:
+        logger.error(f"Error fetching content: {e}")
         raise
+    finally:
+        if driver:
+            driver.quit()
 
 
 def parse_date(date_text):
@@ -69,7 +201,7 @@ def parse_date(date_text):
             continue
 
     logger.warning(f"Could not parse date: {date_text}")
-    return None  # Return None so caller can use stable fallback with appropriate identifier
+    return None
 
 
 def extract_articles(soup):
@@ -78,7 +210,6 @@ def extract_articles(soup):
     seen_links = set()
 
     # Find all article containers
-    # Looking for divs with class "group relative" that contain news articles
     article_containers = soup.select("div.group.relative")
 
     logger.info(f"Found {len(article_containers)} potential article containers")
@@ -117,7 +248,9 @@ def extract_articles(soup):
 
             # Extract description
             description_elem = container.select_one("p.text-secondary")
-            description = description_elem.text.strip() if description_elem else title
+            description = (
+                description_elem.text.strip() if description_elem else title
+            )
 
             # Extract date - try multiple selectors
             date = None
@@ -145,14 +278,13 @@ def extract_articles(soup):
                 ):
                     date = parse_date(date_text)
 
-            # Second try: span.mono-tag.text-xs in footer (standard article format)
+            # Second try: span.mono-tag.text-xs in footer (grid article format)
             if not date:
                 footer_elements = container.select(
                     "div.flex.items-center.justify-between span.mono-tag.text-xs"
                 )
                 for elem in footer_elements:
                     text = elem.text.strip()
-                    # Check if this looks like a date
                     if any(
                         month in text
                         for month in [
@@ -178,7 +310,7 @@ def extract_articles(soup):
                 logger.warning(f"Could not extract date for article: {title}")
                 date = stable_fallback_date(link)
 
-            # Extract category (tags like "grok", etc.)
+            # Extract category
             category = "News"
             category_elem = container.select_one(
                 "div:not(.flex.items-center.justify-between) span.mono-tag.text-xs"
@@ -234,25 +366,20 @@ def parse_news_html(html_content):
         raise
 
 
-def generate_rss_feed(articles, feed_name="xainews"):
+def generate_rss_feed(articles):
     """Generate RSS feed from news articles."""
     try:
         fg = FeedGenerator()
         fg.title("xAI News")
         fg.description("Latest news and updates from xAI")
-        fg.link(href="https://x.ai/news")
         fg.language("en")
-
-        # Set feed metadata
         fg.author({"name": "xAI"})
         fg.subtitle("Latest updates from xAI")
-        fg.link(href="https://x.ai/news", rel="alternate")
-        fg.link(href=f"https://x.ai/news/feed_{feed_name}.xml", rel="self")
 
-        # Sort articles for correct feed order (newest first in output)
+        setup_feed_links(fg, blog_url=NEWS_URL, feed_name=FEED_NAME)
+
         articles_sorted = sort_posts_for_feed(articles, date_field="date")
 
-        # Add entries
         for article in articles_sorted:
             fe = fg.add_entry()
             fe.title(article["title"])
@@ -270,56 +397,57 @@ def generate_rss_feed(articles, feed_name="xainews"):
         raise
 
 
-def save_rss_feed(feed_generator, feed_name="xainews"):
+def save_rss_feed(feed_generator):
     """Save the RSS feed to a file in the feeds directory."""
     try:
-        # Ensure feeds directory exists and get its path
-        feeds_dir = ensure_feeds_directory()
-
-        # Create the output file path
-        output_filename = feeds_dir / f"feed_{feed_name}.xml"
-
-        # Save the feed
+        feeds_dir = get_feeds_dir()
+        output_filename = feeds_dir / f"feed_{FEED_NAME}.xml"
         feed_generator.rss_file(str(output_filename), pretty=True)
         logger.info(f"Successfully saved RSS feed to {output_filename}")
         return output_filename
-
     except Exception as e:
         logger.error(f"Error saving RSS feed: {str(e)}")
         raise
 
 
-def main(feed_name="xainews", html_file=None):
+def main(full_reset=False):
     """Main function to generate RSS feed from xAI's news page.
 
     Args:
-        feed_name: Name of the feed (default: "xainews")
-        html_file: Optional path to local HTML file to parse instead of fetching from web
+        full_reset: If True, ignore cache and do a fresh fetch.
+                   If False, merge new articles with cached ones.
     """
     try:
-        # Get HTML content either from local file or web
-        if html_file:
-            logger.info(f"Reading HTML content from local file: {html_file}")
-            with open(html_file, "r", encoding="utf-8") as f:
-                html_content = f.read()
-        else:
-            # Fetch news content from web
-            html_content = fetch_news_content()
+        cache = load_cache()
+        cached_articles = deserialize_articles(cache.get("articles", []))
 
-        # Parse articles from HTML
-        articles = parse_news_html(html_content)
+        if full_reset or not cached_articles:
+            mode = "full reset" if full_reset else "no cache exists"
+            logger.info(f"Running full fetch ({mode})")
+        else:
+            logger.info("Running incremental update")
+
+        html_content = fetch_news_content()
+        new_articles = parse_news_html(html_content)
+        logger.info(f"Found {len(new_articles)} articles from page")
+
+        if cached_articles and not full_reset:
+            articles = merge_articles(new_articles, cached_articles)
+        else:
+            articles = sort_posts_for_feed(new_articles, date_field="date")
 
         if not articles:
-            logger.warning("No articles found!")
+            logger.warning("No articles found. Please check the HTML structure.")
             return False
 
-        # Generate RSS feed with all articles
-        feed = generate_rss_feed(articles, feed_name)
+        save_cache(articles)
 
-        # Save feed to file
-        output_file = save_rss_feed(feed, feed_name)
+        feed = generate_rss_feed(articles)
+        save_rss_feed(feed)
 
-        logger.info(f"Successfully generated RSS feed with {len(articles)} articles")
+        logger.info(
+            f"Successfully generated RSS feed with {len(articles)} articles"
+        )
         return True
 
     except Exception as e:
@@ -328,27 +456,13 @@ def main(feed_name="xainews", html_file=None):
 
 
 if __name__ == "__main__":
-    import sys
-
-    # Check if HTML file path was provided as argument
-    html_file = None
-    if len(sys.argv) > 1:
-        html_file = sys.argv[1]
-        if not Path(html_file).exists():
-            logger.error(f"HTML file not found: {html_file}")
-            sys.exit(1)
-
-    # Check if xAINews.html exists in current directory or parent directory
-    if not html_file:
-        potential_paths = [
-            Path("xAINews.html"),
-            Path("../xAINews.html"),
-            get_project_root() / "xAINews.html",
-        ]
-        for path in potential_paths:
-            if path.exists():
-                html_file = str(path)
-                logger.info(f"Found local HTML file: {html_file}")
-                break
-
-    main(html_file=html_file)
+    parser = argparse.ArgumentParser(
+        description="Generate xAI News RSS feed"
+    )
+    parser.add_argument(
+        "--full",
+        action="store_true",
+        help="Force full reset (ignore cache)",
+    )
+    args = parser.parse_args()
+    main(full_reset=args.full)
