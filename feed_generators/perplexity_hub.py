@@ -119,21 +119,36 @@ def merge_articles(new_articles, cached_articles):
     return sort_posts_for_feed(merged, date_field="date")
 
 
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/131.0.0.0 Safari/537.36"
+)
+
+
 def setup_selenium_driver():
-    """Set up Selenium WebDriver with undetected-chromedriver."""
+    """Set up Selenium WebDriver with undetected-chromedriver.
+
+    Forces English content via Accept-Language HTTP header (CDP).
+    Perplexity geo-redirects to localized URLs based on request headers.
+    """
     options = uc.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--window-size=1920,10000")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--lang=en-US")
-    options.add_argument(
-        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/131.0.0.0 Safari/537.36"
-    )
+    options.add_argument(f"--user-agent={USER_AGENT}")
     driver = uc.Chrome(options=options)
-    # Force English locale via CDP
-    driver.execute_cdp_cmd("Emulation.setLocaleOverride", {"locale": "en-US"})
+    # Set Accept-Language HTTP header via CDP. This is what the server
+    # actually checks for locale routing (not --lang or setLocaleOverride).
+    driver.execute_cdp_cmd("Network.enable", {})
+    driver.execute_cdp_cmd(
+        "Network.setUserAgentOverride",
+        {
+            "userAgent": USER_AGENT,
+            "acceptLanguage": "en-US,en;q=0.9",
+        },
+    )
     return driver
 
 
@@ -264,18 +279,24 @@ def parse_hub_html(html_content):
             if not date:
                 date = stable_fallback_date(link)
 
-            # Extract category from paragraph tags
+            # Extract category from paragraph tags.
+            # Cards have <p> tags for date ("Apr 2, 2026") and category ("Company").
+            # Skip paragraphs that look like dates (contain digits + month names).
             category = "Blog"
+            date_patterns = re.compile(
+                r"\d|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
+                r"|Januar|Februar|März|April|Mai|Juni|Juli|August"
+                r"|September|Oktober|November|Dezember"
+            )
             paragraphs = card.select("p")
             for p in paragraphs:
                 text = p.text.strip()
-                # Skip date-like text and very short text
-                if len(text) < 3:
+                if len(text) < 3 or len(text) > 30:
                     continue
-                # Check if this looks like a category (not a date)
-                if not any(c.isdigit() for c in text[:4]):
-                    category = text
-                    break
+                if date_patterns.search(text):
+                    continue
+                category = text
+                break
 
             article = {
                 "title": title,
