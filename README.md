@@ -24,6 +24,7 @@
 | [AI at Meta Blog](https://ai.meta.com/blog/)                                               | [feed_meta_ai.xml](https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_meta_ai.xml)                                               |
 | [Groq Blog](https://groq.com/blog/)                                                        | [feed_groq.xml](https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_groq.xml)                                                     |
 | [AI FIRST Podcast](https://ai-first.ai/podcast)                                           | [feed_ai_first_podcast.xml](https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_ai_first_podcast.xml)                              |
+| [Weaviate Blog](https://weaviate.io/blog)                                                  | [feed_weaviate.xml](https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_weaviate.xml)                                              |
 
 ### What is this?
 

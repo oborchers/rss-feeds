@@ -199,6 +199,20 @@ feeds_dagster: ## Generate RSS feed for Dagster Blog
 	$(Q)python feed_generators/dagster_blog.py
 	$(call print_success,Dagster Blog feed generated)
 
+.PHONY: feeds_weaviate
+feeds_weaviate: ## Generate RSS feed for Weaviate Blog (incremental)
+	$(call check_venv)
+	$(call print_info,Generating Weaviate Blog feed)
+	$(Q)python feed_generators/weaviate_blog.py
+	$(call print_success,Weaviate Blog feed generated)
+
+.PHONY: feeds_weaviate_full
+feeds_weaviate_full: ## Generate RSS feed for Weaviate Blog (full reset)
+	$(call check_venv)
+	$(call print_info,Generating Weaviate Blog feed - FULL RESET)
+	$(Q)python feed_generators/weaviate_blog.py --full
+	$(call print_success,Weaviate Blog feed generated - full reset)
+
 .PHONY: clean_feeds
 clean_feeds: ## Clean generated RSS feed files
 	$(call print_warning,Removing generated RSS feeds)
