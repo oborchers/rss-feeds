@@ -2,18 +2,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
     <title>Anthropic Research</title>
-    <link>https://anthropic.com/research/feed_anthropic_research.xml</link>
+    <link>https://www.anthropic.com/research</link>
     <description>Latest research from Anthropic</description>
-    <atom:link href="https://anthropic.com/research/feed_anthropic_research.xml" rel="self"/>
+    <atom:link href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_anthropic_research.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
       <url>https://www.anthropic.com/images/icons/apple-touch-icon.png</url>
       <title>Anthropic Research</title>
-      <link>https://anthropic.com/research/feed_anthropic_research.xml</link>
+      <link>https://www.anthropic.com/research</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Mar 2026 18:18:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 00:19:03 +0000</lastBuildDate>
     <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
@@ -41,6 +41,22 @@
       <description>Alignment</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
       <category>Research</category>
+    </item>
+    <item>
+      <title>Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model</title>
+      <link>https://www.anthropic.com/research/emotion-concepts-function</link>
+      <description>Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model</description>
+      <guid isPermaLink="false">https://www.anthropic.com/research/emotion-concepts-function</guid>
+      <category>Research</category>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index</title>
+      <link>https://www.anthropic.com/research/how-australia-uses-claude</link>
+      <description>Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index</description>
+      <guid isPermaLink="false">https://www.anthropic.com/research/how-australia-uses-claude</guid>
+      <category>Research</category>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves</title>
@@ -75,6 +91,14 @@
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models</title>
+      <link>https://www.anthropic.com/research/diff-tool</link>
+      <description>Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models</description>
+      <guid isPermaLink="false">https://www.anthropic.com/research/diff-tool</guid>
+      <category>Research</category>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</title>
       <link>https://www.anthropic.com/research/labor-market-impacts</link>
       <description>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</description>
@@ -89,38 +113,6 @@
       <guid isPermaLink="false">https://www.anthropic.com/research/deprecation-updates-opus-3</guid>
       <category>Research</category>
       <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Feb 23, 2026AnnouncementsAnthropic Education Report: The AI Fluency Index</title>
-      <link>https://www.anthropic.com/research/AI-fluency-index</link>
-      <description>Feb 23, 2026AnnouncementsAnthropic Education Report: The AI Fluency Index</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/AI-fluency-index</guid>
-      <category>Research</category>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Feb 23, 2026AlignmentThe persona selection model</title>
-      <link>https://www.anthropic.com/research/persona-selection-model</link>
-      <description>Feb 23, 2026AlignmentThe persona selection model</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/persona-selection-model</guid>
-      <category>Research</category>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice</title>
-      <link>https://www.anthropic.com/research/measuring-agent-autonomy</link>
-      <description>Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/measuring-agent-autonomy</guid>
-      <category>Research</category>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index</title>
-      <link>https://www.anthropic.com/research/india-brief-economic-index</link>
-      <description>Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/india-brief-economic-index</guid>
-      <category>Research</category>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>PolicyDec 18, 2025Project Vend: Phase twoIn June, we revealed that we’d set up a small shop in our San Francisco office lunchroom, run by an AI shopkeeper. It was part of Project Vend, a free-form experiment exploring how well AIs could do on complex, real-world tasks. How has Claude's business been since we last wrote?</title>

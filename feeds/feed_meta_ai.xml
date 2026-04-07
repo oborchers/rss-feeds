@@ -4,7 +4,7 @@
     <title>AI at Meta Blog</title>
     <link>https://ai.meta.com/blog/</link>
     <description>AI research, open source, and applications from Meta</description>
-    <atom:link href="https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_meta_ai.xml" rel="self"/>
+    <atom:link href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_meta_ai.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
@@ -13,7 +13,15 @@
       <link>https://ai.meta.com/blog/</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Apr 2026 14:49:48 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 00:19:54 +0000</lastBuildDate>
+    <item>
+      <title>How Alta Daily Uses Meta’s Segment Anything to Reimagine the Digital Closet</title>
+      <link>https://ai.meta.com/blog/alta-daily-fashion-app-segment-anything/</link>
+      <description>How Alta Daily Uses Meta’s Segment Anything to Reimagine the Digital Closet</description>
+      <guid isPermaLink="false">https://ai.meta.com/blog/alta-daily-fashion-app-segment-anything/</guid>
+      <category>Computer Vision</category>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>SAM 3.1: Faster and More Accessible Real-Time Video Detection and Tracking With Multiplexing and Global Reasoning</title>
       <link>https://ai.meta.com/blog/segment-anything-model-3/</link>
@@ -41,7 +49,7 @@
     <item>
       <title>Reducing Government Costs and Increasing Access to Greenspaces in the United Kingdom with DINO</title>
       <link>https://ai.meta.com/blog/forest-research-dino/</link>
-      <description>Reducing Government Costs and Increasing Access to Greenspaces in the United Kingdom with DINO</description>
+      <description>Meta's DINOv2 model is enhancing reforestation efforts around the world. Learn how the UK government is using DINO to help reduce costs and increase access to greenspaces.</description>
       <guid isPermaLink="false">https://ai.meta.com/blog/forest-research-dino/</guid>
       <category>Computer Vision</category>
       <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
@@ -709,20 +717,12 @@
       <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Generate an entire app from a prompt using Together AI’s LlamaCoder</title>
-      <link>https://ai.meta.com/blog/together-ai-llamacoder/</link>
-      <description>To inspire developers who build on Llama, Together AI built the LlamaCoder app—an open source web app that allows people to generate an entire app from a prompt using Llama 3.1 405B.</description>
-      <guid isPermaLink="false">https://ai.meta.com/blog/together-ai-llamacoder/</guid>
-      <category>Open Source</category>
-      <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli</title>
       <link>https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/</link>
       <description>Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli</description>
       <guid isPermaLink="false">https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/</guid>
       <category>Research</category>
-      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
