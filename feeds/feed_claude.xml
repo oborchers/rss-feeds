@@ -8,12 +8,12 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Apr 2026 22:11:18 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 23:11:52 +0000</lastBuildDate>
     <item>
       <title>How and when to use subagents in Claude Code</title>
-      <link>https://claude.com/blog/how-and-when-to-use-subagents-in-claude-code</link>
+      <link>https://claude.com/blog/subagents-in-claude-code</link>
       <description>How and when to use subagents in Claude Code</description>
-      <guid isPermaLink="false">https://claude.com/blog/how-and-when-to-use-subagents-in-claude-code</guid>
+      <guid isPermaLink="false">https://claude.com/blog/subagents-in-claude-code</guid>
       <category>Claude Code</category>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
     </item>
