@@ -180,5 +180,8 @@ cython_debug/
 # HTML
 *.html
 
+# Cookies / credentials
+*cookies*
+
 # Cache (keep .gitkeep but ignore JSON cache files)
 cache/*.json
