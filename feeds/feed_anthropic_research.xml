@@ -13,7 +13,7 @@
       <link>https://anthropic.com/research/feed_anthropic_research.xml</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Apr 2026 13:31:26 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 15:29:03 +0000</lastBuildDate>
     <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
@@ -99,9 +99,9 @@
       <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</title>
+      <title>Economic ResearchMar 5, 2026Labor market impacts of AI: A new measure and early evidenceIn this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.</title>
       <link>https://www.anthropic.com/research/labor-market-impacts</link>
-      <description>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</description>
+      <description>Economic ResearchMar 5, 2026Labor market impacts of AI: A new measure and early evidenceIn this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/labor-market-impacts</guid>
       <category>Research</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
@@ -121,14 +121,6 @@
       <guid isPermaLink="false">https://www.anthropic.com/research/project-vend-2</guid>
       <category>Research</category>
       <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>InterpretabilityOct 29, 2025Signs of introspection in large language modelsCan Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.</title>
-      <link>https://www.anthropic.com/research/introspection</link>
-      <description>InterpretabilityOct 29, 2025Signs of introspection in large language modelsCan Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/introspection</guid>
-      <category>Research</category>
-      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>AlignmentFeb 3, 2025Constitutional Classifiers: Defending against universal jailbreaksThese classifiers filter the overwhelming majority of jailbreaks while maintaining practical deployment. A prototype withstood over 3,000 hours of red teaming with no universal jailbreak discovered.</title>
