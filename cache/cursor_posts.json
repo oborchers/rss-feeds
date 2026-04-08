@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-06T15:14:16.667105+00:00",
+  "last_updated": "2026-04-06T20:37:01.460977+00:00",
   "posts": [
     {
       "url": "https://cursor.com/blog/prompt-design",
@@ -406,6 +406,13 @@
       "description": "Cursor 3 is a unified workspace for building software with agents.",
       "date": "2026-04-02T00:00:00.000Z",
       "category": ""
+    },
+    {
+      "url": "https://cursor.com/blog/warp-decode",
+      "title": "Better MoE model inference with warp decode",
+      "description": "",
+      "date": "2026-04-06T12:00:00.000Z",
+      "category": "research"
     }
   ]
 }
