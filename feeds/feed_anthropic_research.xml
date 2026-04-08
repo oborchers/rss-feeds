@@ -13,7 +13,7 @@
       <link>https://anthropic.com/research/feed_anthropic_research.xml</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Apr 2026 12:16:17 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 13:31:26 +0000</lastBuildDate>
     <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
@@ -43,9 +43,9 @@
       <category>Research</category>
     </item>
     <item>
-      <title>Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model</title>
+      <title>Emotion concepts and their function in a large language model</title>
       <link>https://www.anthropic.com/research/emotion-concepts-function</link>
-      <description>Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model</description>
+      <description>Emotion concepts and their function in a large language model</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/emotion-concepts-function</guid>
       <category>Research</category>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
@@ -137,14 +137,6 @@
       <guid isPermaLink="false">https://www.anthropic.com/research/constitutional-classifiers</guid>
       <category>Research</category>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>AlignmentDec 18, 2024Alignment faking in large language modelsThis paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.</title>
-      <link>https://www.anthropic.com/research/alignment-faking</link>
-      <description>AlignmentDec 18, 2024Alignment faking in large language modelsThis paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/alignment-faking</guid>
-      <category>Research</category>
-      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
