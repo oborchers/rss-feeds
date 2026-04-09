@@ -8,12 +8,20 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Apr 2026 18:20:06 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 19:27:21 +0000</lastBuildDate>
     <item>
       <title>Making Claude Cowork ready for enterprise</title>
       <link>https://claude.com/blog/cowork-for-enterprise</link>
       <description>Making Claude Cowork ready for enterprise</description>
       <guid isPermaLink="false">https://claude.com/blog/cowork-for-enterprise</guid>
+      <category>Product announcements</category>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The advisor strategy: Give agents an intelligence boost</title>
+      <link>https://claude.com/blog/the-advisor-strategy</link>
+      <description>The advisor strategy: Give agents an intelligence boost</description>
+      <guid isPermaLink="false">https://claude.com/blog/the-advisor-strategy</guid>
       <category>Product announcements</category>
       <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
     </item>
