@@ -13,7 +13,7 @@
       <link>https://ai-first.ai/podcast</link>
     </image>
     <language>de</language>
-    <lastBuildDate>Wed, 08 Apr 2026 00:42:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 00:34:56 +0000</lastBuildDate>
     <item>
       <title>Die andere Seite der KI-Medaille: Brain Fry, Arbeitsmarkt-Druck und Adaptionsprobleme</title>
       <link>https://ai-first.ai/podcast/die-andere-seite-der-ki-medaille-brain-fry-arbeitsmarkt-druck-und-adaptionsprobleme</link>
@@ -246,6 +246,13 @@
       <pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>#44Wie funktioniert KI-Governance in einer Bank?mitJulia SterlingHead of AI Strategy &amp; GovernanceCommerzbank</title>
+      <link>https://ai-first.ai/podcast/wie-funktioniert-ki-governance-in-einer-bank</link>
+      <description>Wie funktioniert KI-Governance in einer Bank? – mit Julia Sterling</description>
+      <guid isPermaLink="false">https://ai-first.ai/podcast/wie-funktioniert-ki-governance-in-einer-bank</guid>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>#43Was kommt nach KI-Chatbots?mitFlorian BaaderGründer &amp; CEOSelect Code (MeinGPT)</title>
       <link>https://ai-first.ai/podcast/was-kommt-nach-ki-chatbots</link>
       <description>Was kommt nach KI-Chatbots? – mit Florian Baader</description>
@@ -265,6 +272,13 @@
       <description>Wie sieht deine KI-Nutzung aus? – mit Elisabeth L'Orange</description>
       <guid isPermaLink="false">https://ai-first.ai/podcast/wie-sieht-deine-ki-nutzung-aus</guid>
       <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>#40Wie sieht die KI-Roadmap 2030 aus?mitSven Gabor JanszkyZukunftsforscher &amp; Gründer2b AHEAD ThinkTank</title>
+      <link>https://ai-first.ai/podcast/wie-sieht-die-ki-roadmap-2030-aus</link>
+      <description>Wie sieht die KI-Roadmap 2030 aus? – mit Sven Gabor Janszky</description>
+      <guid isPermaLink="false">https://ai-first.ai/podcast/wie-sieht-die-ki-roadmap-2030-aus</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>#39Wie Rossmann Prompt Engineers einsetzt und KI Use Cases umsetztmitLena EckrothVerantwortliche Digitalisierung und KIRossmann</title>
@@ -538,20 +552,6 @@
       <description>ogGPT trifft Großkonzern: Wie Otto 30.000 Mitarbeiter AI-fit macht – mit Florian Leuerer</description>
       <guid isPermaLink="false">https://ai-first.ai/podcast/oggpt-trifft-grosskonzern-wie-otto-30-000-mitarbeiter-ai-fit-macht</guid>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>#40Wie sieht die KI-Roadmap 2030 aus?mitSven Gabor JanszkyZukunftsforscher &amp; Gründer2b AHEAD ThinkTank</title>
-      <link>https://ai-first.ai/podcast/wie-sieht-die-ki-roadmap-2030-aus</link>
-      <description>#40Wie sieht die KI-Roadmap 2030 aus?mitSven Gabor JanszkyZukunftsforscher &amp; Gründer2b AHEAD ThinkTank</description>
-      <guid isPermaLink="false">https://ai-first.ai/podcast/wie-sieht-die-ki-roadmap-2030-aus</guid>
-      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>#44Wie funktioniert KI-Governance in einer Bank?mitJulia SterlingHead of AI Strategy &amp; GovernanceCommerzbank</title>
-      <link>https://ai-first.ai/podcast/wie-funktioniert-ki-governance-in-einer-bank</link>
-      <description>#44Wie funktioniert KI-Governance in einer Bank?mitJulia SterlingHead of AI Strategy &amp; GovernanceCommerzbank</description>
-      <guid isPermaLink="false">https://ai-first.ai/podcast/wie-funktioniert-ki-governance-in-einer-bank</guid>
-      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
