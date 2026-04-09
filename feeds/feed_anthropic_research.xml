@@ -13,7 +13,7 @@
       <link>https://www.anthropic.com/research</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Apr 2026 00:19:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 00:15:45 +0000</lastBuildDate>
     <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
@@ -43,9 +43,9 @@
       <category>Research</category>
     </item>
     <item>
-      <title>Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model</title>
+      <title>Emotion concepts and their function in a large language model</title>
       <link>https://www.anthropic.com/research/emotion-concepts-function</link>
-      <description>Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model</description>
+      <description>Emotion concepts and their function in a large language model</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/emotion-concepts-function</guid>
       <category>Research</category>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
@@ -99,9 +99,9 @@
       <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</title>
+      <title>Economic ResearchMar 5, 2026Labor market impacts of AI: A new measure and early evidenceIn this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.</title>
       <link>https://www.anthropic.com/research/labor-market-impacts</link>
-      <description>Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</description>
+      <description>Economic ResearchMar 5, 2026Labor market impacts of AI: A new measure and early evidenceIn this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/labor-market-impacts</guid>
       <category>Research</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
@@ -123,28 +123,12 @@
       <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>InterpretabilityOct 29, 2025Signs of introspection in large language modelsCan Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.</title>
-      <link>https://www.anthropic.com/research/introspection</link>
-      <description>InterpretabilityOct 29, 2025Signs of introspection in large language modelsCan Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/introspection</guid>
-      <category>Research</category>
-      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>AlignmentFeb 3, 2025Constitutional Classifiers: Defending against universal jailbreaksThese classifiers filter the overwhelming majority of jailbreaks while maintaining practical deployment. A prototype withstood over 3,000 hours of red teaming with no universal jailbreak discovered.</title>
       <link>https://www.anthropic.com/research/constitutional-classifiers</link>
       <description>AlignmentFeb 3, 2025Constitutional Classifiers: Defending against universal jailbreaksThese classifiers filter the overwhelming majority of jailbreaks while maintaining practical deployment. A prototype withstood over 3,000 hours of red teaming with no universal jailbreak discovered.</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/constitutional-classifiers</guid>
       <category>Research</category>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>AlignmentDec 18, 2024Alignment faking in large language modelsThis paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.</title>
-      <link>https://www.anthropic.com/research/alignment-faking</link>
-      <description>AlignmentDec 18, 2024Alignment faking in large language modelsThis paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/alignment-faking</guid>
-      <category>Research</category>
-      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
