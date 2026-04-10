@@ -13,7 +13,15 @@
       <link>https://ai.meta.com/blog/</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Apr 2026 00:19:54 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 05:36:13 +0000</lastBuildDate>
+    <item>
+      <title>Scaling How We Build and Test Our Most Advanced AI</title>
+      <link>https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/</link>
+      <description>Scaling How We Build and Test Our Most Advanced AI</description>
+      <guid isPermaLink="false">https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/</guid>
+      <category>Research</category>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How Alta Daily Uses Meta’s Segment Anything to Reimagine the Digital Closet</title>
       <link>https://ai.meta.com/blog/alta-daily-fashion-app-segment-anything/</link>
@@ -31,6 +39,13 @@
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli</title>
+      <link>https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/</link>
+      <guid isPermaLink="false">https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/</guid>
+      <category>Research</category>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Four MTIA Chips in Two Years: Scaling AI Experiences for Billions</title>
       <link>https://ai.meta.com/blog/meta-mtia-scale-ai-chips-for-billions/</link>
       <description>Four MTIA Chips in Two Years: Scaling AI Experiences for Billions</description>
@@ -41,7 +56,7 @@
     <item>
       <title>Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2</title>
       <link>https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/</link>
-      <description>Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2</description>
+      <description>Today, in partnership with the World Resources Institute, we’re announcing Canopy Height Maps v2 (CHMv2): an open source model and world-scale maps generated with it.</description>
       <guid isPermaLink="false">https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/</guid>
       <category>Computer Vision</category>
       <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
@@ -693,14 +708,6 @@
       <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Llama 3.2: Revolutionizing edge AI and vision with open, customizable models</title>
-      <link>https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/</link>
-      <description>Today, we’re releasing Llama 3.2, which includes small and medium-sized vision LLMs, and lightweight, text-only models that fit onto edge and mobile devices.</description>
-      <guid isPermaLink="false">https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/</guid>
-      <category>Open Source</category>
-      <pubDate>Wed, 25 Sep 2024 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Connect 2024: The responsible approach we’re taking to generative AI</title>
       <link>https://ai.meta.com/blog/responsible-ai-connect-2024/</link>
       <description>With the rapidly evolving AI landscape, we recognize the importance of sharing our responsibility and safety approach with everyone.</description>
@@ -709,20 +716,12 @@
       <pubDate>Wed, 25 Sep 2024 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Announcing the inaugural Llama Impact Grant and Llama Impact Innovation Award recipients</title>
-      <link>https://ai.meta.com/blog/llama-impact-grant-innovation-award-winners-2024/</link>
-      <description>We’re inspired by these and the many other diverse projects we’ve seen developers undertake around the world to positively impact their communities by building with Llama.</description>
-      <guid isPermaLink="false">https://ai.meta.com/blog/llama-impact-grant-innovation-award-winners-2024/</guid>
-      <category>Open Source</category>
-      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli</title>
-      <link>https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/</link>
-      <description>Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli</description>
-      <guid isPermaLink="false">https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/</guid>
-      <category>Research</category>
-      <pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate>
+      <title>Introducing Muse Spark: Scaling Towards Personal Superintelligence</title>
+      <link>https://ai.meta.com/blog/introducing-muse-spark-msl/</link>
+      <description>Introducing Muse Spark: Scaling Towards Personal Superintelligence</description>
+      <guid isPermaLink="false">https://ai.meta.com/blog/introducing-muse-spark-msl/</guid>
+      <category></category>
+      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

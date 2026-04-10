@@ -13,7 +13,7 @@
       <link>https://www.anthropic.com/research</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Apr 2026 00:15:45 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 05:35:22 +0000</lastBuildDate>
     <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
@@ -41,6 +41,14 @@
       <description>Alignment</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
       <category>Research</category>
+    </item>
+    <item>
+      <title>Apr 9, 2026PolicyTrustworthy agents in practice</title>
+      <link>https://www.anthropic.com/research/trustworthy-agents</link>
+      <description>Apr 9, 2026PolicyTrustworthy agents in practice</description>
+      <guid isPermaLink="false">https://www.anthropic.com/research/trustworthy-agents</guid>
+      <category>Research</category>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Emotion concepts and their function in a large language model</title>
@@ -105,14 +113,6 @@
       <guid isPermaLink="false">https://www.anthropic.com/research/labor-market-impacts</guid>
       <category>Research</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3</title>
-      <link>https://www.anthropic.com/research/deprecation-updates-opus-3</link>
-      <description>Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3</description>
-      <guid isPermaLink="false">https://www.anthropic.com/research/deprecation-updates-opus-3</guid>
-      <category>Research</category>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>PolicyDec 18, 2025Project Vend: Phase twoIn June, we revealed that we’d set up a small shop in our San Francisco office lunchroom, run by an AI shopkeeper. It was part of Project Vend, a free-form experiment exploring how well AIs could do on complex, real-world tasks. How has Claude's business been since we last wrote?</title>
