@@ -13,14 +13,17 @@
       <link>https://anthropic.com/feed_anthropic_red.xml</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Apr 2026 00:18:40 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 01:33:50 +0000</lastBuildDate>
     <item>
       <title>Assessing Claude Mythos Preview’s cybersecurity capabilities</title>
       <link>https://red.anthropic.com/2026/mythos-preview/</link>
       <description>Claude Mythos Preview is a new general-purpose language model that is
-                        strikingly capable at computer security tasks. This post provides technical details for researchers
-                        and practitioners who want to understand exactly how we have been testing this model, and what we
-                        have found over the past month. We hope this will show why we view this as a watershed moment for
+                        strikingly capable at computer security tasks. This post provides technical details for
+                        researchers
+                        and practitioners who want to understand exactly how we have been testing this model, and what
+                        we
+                        have found over the past month. We hope this will show why we view this as a watershed moment
+                        for
                         security, and why we have chosen to begin a coordinated effort to reinforce the world’s cyber
                         defenses.</description>
       <guid isPermaLink="false">https://red.anthropic.com/2026/mythos-preview/</guid>
