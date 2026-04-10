@@ -8,20 +8,20 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Apr 2026 00:35:10 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:41:13 +0000</lastBuildDate>
+    <item>
+      <title>Canopy Labs’ Orpheus TTS is live on GroqCloud</title>
+      <link>https://groq.com/blog/canopy-labs-orpheus-tts-is-live-on-groqcloud</link>
+      <description>Canopy Labs’ Orpheus TTS is live on GroqCloud</description>
+      <guid isPermaLink="false">https://groq.com/blog/canopy-labs-orpheus-tts-is-live-on-groqcloud</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>GroqCloud: Expanding to Meet Demand</title>
       <link>https://groq.com/blog/groqcloud-expanding-to-meet-demand</link>
       <description>GroqCloud: Expanding to Meet Demand</description>
       <guid isPermaLink="false">https://groq.com/blog/groqcloud-expanding-to-meet-demand</guid>
       <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Canopy Labs’ Orpheus TTS is live on GroqCloud</title>
-      <link>https://groq.com/blog/canopy-labs-orpheus-tts-is-live-on-groqcloud</link>
-      <description>Canopy Labs’ Orpheus TTS is live on GroqCloud</description>
-      <guid isPermaLink="false">https://groq.com/blog/canopy-labs-orpheus-tts-is-live-on-groqcloud</guid>
-      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Advancing the American AI Stack</title>
