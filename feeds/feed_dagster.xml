@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Apr 2026 00:41:07 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:39:32 +0000</lastBuildDate>
     <item>
       <title>Dagster 1.13: Octopus's Garden</title>
       <link>https://dagster.io/blog/dagster-1-13-octopuss-garden</link>
@@ -281,13 +281,6 @@
       <description>Explore another set of powerful yet overlooked Python features—from overload and cached_property to contextvars and ExitStack</description>
       <guid isPermaLink="false">https://dagster.io/blog/what-copilot-wont-teach-you-about-python-part-2</guid>
       <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Dagster’s MCP Server</title>
-      <link>https://dagster.io/blog/dagsters-mcp-server</link>
-      <description>We are announcing the release of our MCP server, enabling AI assistants like Cursor to seamlessly integrate with Dagster projects through Model Context Protocol, unlocking composable workflows across your entire data stack.</description>
-      <guid isPermaLink="false">https://dagster.io/blog/dagsters-mcp-server</guid>
-      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Software-Defined Assets Explained</title>

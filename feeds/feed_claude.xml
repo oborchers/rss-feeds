@@ -8,7 +8,31 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Apr 2026 00:41:04 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:39:30 +0000</lastBuildDate>
+    <item>
+      <title>Multi-agent coordination patterns: Five approaches and when to use them</title>
+      <link>https://claude.com/blog/multi-agent-coordination-patterns</link>
+      <description>Multi-agent coordination patterns: Five approaches and when to use them</description>
+      <guid isPermaLink="false">https://claude.com/blog/multi-agent-coordination-patterns</guid>
+      <category>Agents</category>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Seeing like an agent: how we design tools in Claude Code</title>
+      <link>https://claude.com/blog/seeing-like-an-agent</link>
+      <description>Seeing like an agent: how we design tools in Claude Code</description>
+      <guid isPermaLink="false">https://claude.com/blog/seeing-like-an-agent</guid>
+      <category>Claude Code</category>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Preparing your security program for AI-accelerated offense</title>
+      <link>https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense</link>
+      <description>Preparing your security program for AI-accelerated offense</description>
+      <guid isPermaLink="false">https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense</guid>
+      <category>Agents</category>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Making Claude Cowork ready for enterprise</title>
       <link>https://claude.com/blog/cowork-for-enterprise</link>
