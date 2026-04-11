@@ -1,16 +1,21 @@
-name: Test Feed Generation
+name: Validate Feeds
 
 on:
+  workflow_run:
+    workflows: ["Run Feeds", "Run Selenium Feeds"]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
-  test-feed:
+  validate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -22,15 +27,8 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Install dependencies and run test feed
+      - name: Validate all feeds
         run: |
-          set -e
           uv venv
           uv pip install -r requirements.txt
-          uv run feed_generators/test_feed.py
-
-      - name: Upload test feed artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: feed_test
-          path: feeds/feed_anthropic.xml
+          uv run feed_generators/validate_feeds.py
