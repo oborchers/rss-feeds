@@ -241,12 +241,12 @@ def main(full_reset=False):
         fg.title("AI FIRST Podcast")
         fg.description(
             "Der AI FIRST Podcast: Erfahre jeden Freitag aus erster Hand, "
-            "wie Unternehmer und Fuehrungskraefte AI einsetzen."
+            "wie Unternehmer und Führungskräfte AI einsetzen."
         )
         fg.language("de")
         fg.author({"name": "AI FIRST"})
         fg.logo("https://ai-first.ai/images/og/og-default.png")
-        fg.subtitle("KI-Transformation, Produktivitaet und die Zukunft der Arbeit")
+        fg.subtitle("KI-Transformation, Produktivität und die Zukunft der Arbeit")
 
         setup_feed_links(fg, blog_url=BLOG_URL, feed_name=FEED_NAME)
 
