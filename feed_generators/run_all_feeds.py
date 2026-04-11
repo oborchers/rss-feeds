@@ -36,7 +36,7 @@ def run_all_feeds(skip_selenium=False, selenium_only=False):
         int: Exit code (0 for success, 1 if any script failed)
     """
     feed_generators_dir = os.path.dirname(os.path.abspath(__file__))
-    skip_scripts = ["utils.py", "test_feed.py"]
+    skip_scripts = ["utils.py", "test_feed.py", "validate_feeds.py"]
     failed_scripts = []
     successful_scripts = []
     skipped_scripts = []
