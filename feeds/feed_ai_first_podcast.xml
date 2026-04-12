@@ -3,7 +3,7 @@
   <channel>
     <title>AI FIRST Podcast</title>
     <link>https://ai-first.ai/podcast</link>
-    <description>KI-Transformation, Produktivitaet und die Zukunft der Arbeit</description>
+    <description>KI-Transformation, Produktivität und die Zukunft der Arbeit</description>
     <atom:link href="https://raw.githubusercontent.com/oborchers/rss-feeds/main/feeds/feed_ai_first_podcast.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
@@ -13,7 +13,7 @@
       <link>https://ai-first.ai/podcast</link>
     </image>
     <language>de</language>
-    <lastBuildDate>Sat, 11 Apr 2026 00:39:25 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2026 00:44:34 +0000</lastBuildDate>
     <item>
       <title>Wie Finanzfluss menschliche Stärken mit KI-Fähigkeiten im Journalismus verbindet</title>
       <link>https://ai-first.ai/podcast/wie-finanzfluss-menschliche-staerken-mit-ki-faehigkeiten-im-journalismus-verbindet</link>
