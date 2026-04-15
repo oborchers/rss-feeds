@@ -13,7 +13,21 @@
       <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2026 00:46:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 00:46:03 +0000</lastBuildDate>
+    <item>
+      <title>v2.1.108</title>
+      <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#21108</link>
+      <description>&lt;ul&gt;&lt;li&gt;Added `ENABLE_PROMPT_CACHING_1H` env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry (`ENABLE_PROMPT_CACHING_1H_BEDROCK` is deprecated but still honored), and `FORCE_PROMPT_CACHING_5M` to force 5-minute TTL&lt;/li&gt;&lt;li&gt;Added recap feature to provide context when returning to a session, configurable in /config and manually invocable with /recap; force with `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` if telemetry disabled.&lt;/li&gt;&lt;li&gt;The model can now discover and invoke built-in slash commands like `/init`, `/review`, and `/security-review` via the Skill tool&lt;/li&gt;&lt;li&gt;`/undo` is now an alias for `/rewind`&lt;/li&gt;&lt;li&gt;Improved `/model` to warn before switching models mid-conversation, since the next response re-reads the full history uncached&lt;/li&gt;&lt;li&gt;Improved `/resume` picker to default to sessions from the current directory; press `Ctrl+A` to show all projects&lt;/li&gt;&lt;li&gt;Improved error messages: server rate limits are now distinguished from plan usage limits; 5xx/529 errors show a link to status.claude.com; unknown slash commands suggest the closest match&lt;/li&gt;&lt;li&gt;Reduced memory footprint for file reads, edits, and syntax highlighting by loading language grammars on demand&lt;/li&gt;&lt;li&gt;Added "verbose" indicator when viewing the detailed transcript (`Ctrl+O`)&lt;/li&gt;&lt;li&gt;Added a warning at startup when prompt caching is disabled via `DISABLE_PROMPT_CACHING*` environment variables&lt;/li&gt;&lt;li&gt;Fixed paste not working in the `/login` code prompt (regression in 2.1.105)&lt;/li&gt;&lt;li&gt;Fixed subscribers who set `DISABLE_TELEMETRY` falling back to 5-minute prompt cache TTL instead of 1 hour&lt;/li&gt;&lt;li&gt;Fixed Agent tool prompting for permission in auto mode when the safety classifier's transcript exceeded its context window&lt;/li&gt;&lt;li&gt;Fixed Bash tool producing no output when `CLAUDE_ENV_FILE` (e.g. `~/.zprofile`) ends with a `#` comment line&lt;/li&gt;&lt;li&gt;Fixed `claude --resume &lt;session-id&gt;` losing the session's custom name and color set via `/rename`&lt;/li&gt;&lt;li&gt;Fixed session titles showing placeholder example text when the first message is a short greeting&lt;/li&gt;&lt;li&gt;Fixed terminal escape codes appearing as garbage text in the prompt input after `--teleport`&lt;/li&gt;&lt;li&gt;Fixed `/feedback` retry: pressing Enter to resubmit after a failure now works without first editing the description&lt;/li&gt;&lt;li&gt;Fixed `--teleport` and `--resume &lt;id&gt;` precondition errors (e.g. dirty git tree, session not found) exiting silently instead of showing the error message&lt;/li&gt;&lt;li&gt;Fixed Remote Control session titles set in the web UI being overwritten by auto-generated titles after the third message&lt;/li&gt;&lt;li&gt;Fixed `--resume` truncating sessions when the transcript contained a self-referencing message&lt;/li&gt;&lt;li&gt;Fixed transcript write failures (e.g., disk full) being silently dropped instead of being logged&lt;/li&gt;&lt;li&gt;Fixed diacritical marks (accents, umlauts, cedillas) being dropped from responses when the `language` setting is configured&lt;/li&gt;&lt;li&gt;Fixed policy-managed plugins never auto-updating when running from a different project than where they were first installed&lt;/li&gt;&lt;/ul&gt;</description>
+      <guid isPermaLink="false">https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#21108</guid>
+      <category>Changelog</category>
+    </item>
+    <item>
+      <title>v2.1.107</title>
+      <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#21107</link>
+      <description>&lt;ul&gt;&lt;li&gt;Show thinking hints sooner during long operations&lt;/li&gt;&lt;/ul&gt;</description>
+      <guid isPermaLink="false">https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#21107</guid>
+      <category>Changelog</category>
+    </item>
     <item>
       <title>v2.1.105</title>
       <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#21105</link>
@@ -348,20 +362,6 @@
       <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2142</link>
       <description>&lt;ul&gt;&lt;li&gt;Improved startup performance by deferring Zod schema construction&lt;/li&gt;&lt;li&gt;Improved prompt cache hit rates by moving date out of system prompt&lt;/li&gt;&lt;li&gt;Added one-time Opus 4.6 effort callout for eligible users&lt;/li&gt;&lt;li&gt;Fixed /resume showing interrupt messages as session titles&lt;/li&gt;&lt;li&gt;Fixed image dimension limit errors to suggest /compact&lt;/li&gt;&lt;/ul&gt;</description>
       <guid isPermaLink="false">https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2142</guid>
-      <category>Changelog</category>
-    </item>
-    <item>
-      <title>v2.1.41</title>
-      <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2141</link>
-      <description>&lt;ul&gt;&lt;li&gt;Added guard against launching Claude Code inside another Claude Code session&lt;/li&gt;&lt;li&gt;Fixed Agent Teams using wrong model identifier for Bedrock, Vertex, and Foundry customers&lt;/li&gt;&lt;li&gt;Fixed a crash when MCP tools return image content during streaming&lt;/li&gt;&lt;li&gt;Fixed /resume session previews showing raw XML tags instead of readable command names&lt;/li&gt;&lt;li&gt;Improved model error messages for Bedrock/Vertex/Foundry users with fallback suggestions&lt;/li&gt;&lt;li&gt;Fixed plugin browse showing misleading "Space to Toggle" hint for already-installed plugins&lt;/li&gt;&lt;li&gt;Fixed hook blocking errors (exit code 2) not showing stderr to the user&lt;/li&gt;&lt;li&gt;Added `speed` attribute to OTel events and trace spans for fast mode visibility&lt;/li&gt;&lt;li&gt;Added `claude auth login`, `claude auth status`, and `claude auth logout` CLI subcommands&lt;/li&gt;&lt;li&gt;Added Windows ARM64 (win32-arm64) native binary support&lt;/li&gt;&lt;li&gt;Improved `/rename` to auto-generate session name from conversation context when called without arguments&lt;/li&gt;&lt;li&gt;Improved narrow terminal layout for prompt footer&lt;/li&gt;&lt;li&gt;Fixed file resolution failing for @-mentions with anchor fragments (e.g., `@README.md#installation`)&lt;/li&gt;&lt;li&gt;Fixed FileReadTool blocking the process on FIFOs, `/dev/stdin`, and large files&lt;/li&gt;&lt;li&gt;Fixed background task notifications not being delivered in streaming Agent SDK mode&lt;/li&gt;&lt;li&gt;Fixed cursor jumping to end on each keystroke in classifier rule input&lt;/li&gt;&lt;li&gt;Fixed markdown link display text being dropped for raw URL&lt;/li&gt;&lt;li&gt;Fixed auto-compact failure error notifications being shown to users&lt;/li&gt;&lt;li&gt;Fixed permission wait time being included in subagent elapsed time display&lt;/li&gt;&lt;li&gt;Fixed proactive ticks firing while in plan mode&lt;/li&gt;&lt;li&gt;Fixed clear stale permission rules when settings change on disk&lt;/li&gt;&lt;li&gt;Fixed hook blocking errors showing stderr content in UI&lt;/li&gt;&lt;/ul&gt;</description>
-      <guid isPermaLink="false">https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2141</guid>
-      <category>Changelog</category>
-    </item>
-    <item>
-      <title>v2.1.39</title>
-      <link>https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2139</link>
-      <description>&lt;ul&gt;&lt;li&gt;Improved terminal rendering performance&lt;/li&gt;&lt;li&gt;Fixed fatal errors being swallowed instead of displayed&lt;/li&gt;&lt;li&gt;Fixed process hanging after session close&lt;/li&gt;&lt;li&gt;Fixed character loss at terminal screen boundary&lt;/li&gt;&lt;li&gt;Fixed blank lines in verbose transcript view&lt;/li&gt;&lt;/ul&gt;</description>
-      <guid isPermaLink="false">https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2139</guid>
       <category>Changelog</category>
     </item>
   </channel>
