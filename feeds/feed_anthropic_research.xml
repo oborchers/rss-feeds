@@ -13,7 +13,7 @@
       <link>https://www.anthropic.com/research</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2026 00:23:52 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 00:23:48 +0000</lastBuildDate>
     <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
@@ -41,6 +41,14 @@
       <description>Alignment</description>
       <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
       <category>Research</category>
+    </item>
+    <item>
+      <title>Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight</title>
+      <link>https://www.anthropic.com/research/automated-alignment-researchers</link>
+      <description>Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight</description>
+      <guid isPermaLink="false">https://www.anthropic.com/research/automated-alignment-researchers</guid>
+      <category>Research</category>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Apr 9, 2026PolicyTrustworthy agents in practice</title>
