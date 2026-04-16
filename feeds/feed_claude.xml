@@ -8,7 +8,15 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Apr 2026 00:46:12 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 00:47:29 +0000</lastBuildDate>
+    <item>
+      <title>Using Claude Code: session management and 1M context</title>
+      <link>https://claude.com/blog/using-claude-code-session-management-and-1m-context</link>
+      <description>Using Claude Code: session management and 1M context</description>
+      <guid isPermaLink="false">https://claude.com/blog/using-claude-code-session-management-and-1m-context</guid>
+      <category>Claude Code</category>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Introducing routines in Claude Code</title>
       <link>https://claude.com/blog/introducing-routines-in-claude-code</link>
@@ -534,14 +542,6 @@
       <description>Claude and your productivity platforms</description>
       <guid isPermaLink="false">https://claude.com/blog/productivity-platforms</guid>
       <category>Product announcements</category>
-      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Equipping agents for the real world with Agent Skills</title>
-      <link>https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills</link>
-      <description>Equipping agents for the real world with Agent Skills</description>
-      <guid isPermaLink="false">https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills</guid>
-      <category>Claude Code</category>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
