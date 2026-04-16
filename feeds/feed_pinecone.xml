@@ -8,7 +8,28 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Apr 2026 00:25:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 00:26:11 +0000</lastBuildDate>
+    <item>
+      <title>Four New GA Features for Dedicated Read Nodes That Give Teams More Control and Observability</title>
+      <link>https://www.pinecone.io/blog/dedicated-read-nodes-ga-features/</link>
+      <guid isPermaLink="false">https://www.pinecone.io/blog/dedicated-read-nodes-ga-features/</guid>
+      <category>Product</category>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pinecone Dedicated Read Nodes: Now Generally Available</title>
+      <link>https://www.pinecone.io/blog/dedicated-read-nodes-ga/</link>
+      <guid isPermaLink="false">https://www.pinecone.io/blog/dedicated-read-nodes-ga/</guid>
+      <category>Featured</category>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Load Balancing AI Services for Availability and Speed</title>
+      <link>https://www.pinecone.io/blog/load-balancing/</link>
+      <guid isPermaLink="false">https://www.pinecone.io/blog/load-balancing/</guid>
+      <category>Engineering</category>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Pinecone Assistant: A Managed Knowledge Layer for Production AI Applications</title>
       <link>https://www.pinecone.io/blog/assistant-managed-knowledge-layer/</link>
@@ -62,7 +83,7 @@
       <title>Pinecone Dedicated Read Nodes are now in Public Preview</title>
       <link>https://www.pinecone.io/blog/dedicated-read-nodes/</link>
       <guid isPermaLink="false">https://www.pinecone.io/blog/dedicated-read-nodes/</guid>
-      <category>Featured</category>
+      <category>Product</category>
       <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -862,27 +883,6 @@
       <guid isPermaLink="false">https://www.pinecone.io/blog/cool-vendor-2021/</guid>
       <category>Company</category>
       <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Pinecone 2.0 is Available and Free</title>
-      <link>https://www.pinecone.io/blog/v2-pricing/</link>
-      <guid isPermaLink="false">https://www.pinecone.io/blog/v2-pricing/</guid>
-      <category>Company</category>
-      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Pinecone 2.0: Take Vector Search from the Lab to Production</title>
-      <link>https://www.pinecone.io/blog/pinecone-v2/</link>
-      <guid isPermaLink="false">https://www.pinecone.io/blog/pinecone-v2/</guid>
-      <category>Product</category>
-      <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The Rise of Vector Data</title>
-      <link>https://www.pinecone.io/blog/rise-vector-data/</link>
-      <guid isPermaLink="false">https://www.pinecone.io/blog/rise-vector-data/</guid>
-      <category>Company</category>
-      <pubDate>Fri, 21 May 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -13,7 +13,15 @@
       <link>https://mistral.ai/news</link>
     </image>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Apr 2026 00:25:02 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 00:25:20 +0000</lastBuildDate>
+    <item>
+      <title>Connect the dots: Build with built-in and custom MCPs in Studio</title>
+      <link>https://mistral.ai/news/connectors</link>
+      <description>Connect enterprise data to your AI applications with reusable connectors, direct tool calling, and human-in-the-loop approval controls.</description>
+      <guid isPermaLink="false">https://mistral.ai/news/connectors</guid>
+      <category>Product</category>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Spaces: A CLI Built for Humans and Agents</title>
       <link>https://mistral.ai/news/spaces</link>
@@ -429,14 +437,6 @@
       <guid isPermaLink="false">https://mistral.ai/news/mistral-nemo</guid>
       <category>Research</category>
       <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>MathΣtral</title>
-      <link>https://mistral.ai/news/mathstral</link>
-      <description>As a tribute to Archimedes, whose 2311th anniversary we're celebrating this year, we are proud to release our first Mathstral model, a specific 7B model designed for math reasoning and scientific discovery. The model has a 32k context window published under the Apache 2.0 license.</description>
-      <guid isPermaLink="false">https://mistral.ai/news/mathstral</guid>
-      <category>Research</category>
-      <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Codestral Mamba</title>
