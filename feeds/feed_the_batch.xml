@@ -8,7 +8,14 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Apr 2026 00:46:01 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2026 00:41:47 +0000</lastBuildDate>
+    <item>
+      <title>Meta Pivots From Open Weights, Big Pharma Bets On AI, Regulatory Patchwork, Simulating Human Cohorts</title>
+      <link>https://www.deeplearning.ai/the-batch/issue-349/</link>
+      <description>The Batch AI News and Insights: AI-native software engineering teams operate very differently than traditional teams.</description>
+      <guid isPermaLink="false">https://www.deeplearning.ai/the-batch/issue-349/</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Anthropic’s Claude Mythos Problem, Dark DNA Unveiled, Pitfalls for Assistive Models, Simulating Fluid Dynamics</title>
       <link>https://www.deeplearning.ai/the-batch/issue-348/</link>

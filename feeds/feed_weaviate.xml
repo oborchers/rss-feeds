@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Apr 2026 00:46:04 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2026 00:41:50 +0000</lastBuildDate>
     <item>
       <title>Weaviate Shared Cloud now generally available on AWS</title>
       <link>https://weaviate.io/blog/aws-shared-cloud-launch</link>
